@@ -182,9 +182,15 @@ function generateCalendar() {
             dayElement.classList.add('future');
         }
         
+        // Format the date string properly
+        const year = dateIterator.getFullYear();
+        const month = String(dateIterator.getMonth() + 1).padStart(2, '0');
+        const day = String(dateIterator.getDate()).padStart(2, '0');
+        const formattedDateStr = `${year}-${month}-${day}`;
+        
         // Set the day number and date attribute
         dayElement.textContent = i;
-        dayElement.setAttribute('data-date', dateIterator.toISOString().split('T')[0]);
+        dayElement.setAttribute('data-date', formattedDateStr);
         
         // Add appropriate click event based on environment and date
         addDayClickHandler(dayElement, dateIterator, currentDate);
@@ -238,9 +244,15 @@ function generateCalendar() {
             dayElement.classList.add('future');
         }
         
+        // Format the date string properly
+        const year = dateIterator.getFullYear();
+        const month = String(dateIterator.getMonth() + 1).padStart(2, '0');
+        const day = String(dateIterator.getDate()).padStart(2, '0');
+        const formattedDateStr = `${year}-${month}-${day}`;
+        
         // Set the day number and date attribute
         dayElement.textContent = i;
-        dayElement.setAttribute('data-date', dateIterator.toISOString().split('T')[0]);
+        dayElement.setAttribute('data-date', formattedDateStr);
         
         // Add appropriate click event based on environment and date
         addDayClickHandler(dayElement, dateIterator, currentDate);
@@ -260,17 +272,49 @@ function isSameDay(date1, date2) {
 
 // Open modal with content for the clicked day
 function openDayModal(event) {
-    const dateStr = event.currentTarget.getAttribute('data-date');
+    // Extract the date from the clicked element
+    let dateStr;
+    
+    // Handle both direct clicks and events passed with data
+    if (event.currentTarget && event.currentTarget.getAttribute) {
+        dateStr = event.currentTarget.getAttribute('data-date');
+    } else if (event.getAttribute) {
+        dateStr = event.getAttribute('data-date');
+    } else {
+        console.error('Could not determine date from clicked element', event);
+        return;
+    }
+    
+    if (!dateStr) {
+        console.error('No date found in clicked element', event);
+        return;
+    }
+    
+    console.log('Date clicked:', dateStr); // Debug log
+    
+    // Parse the date
     const dateParts = dateStr.split('-');
     const clickedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+    
+    // Ensure the date is correct by manually formatting it
+    // This ensures no timezone issues affect the date string
+    const year = clickedDate.getFullYear();
+    const month = String(clickedDate.getMonth() + 1).padStart(2, '0'); // Add 1 since months are 0-indexed
+    const day = String(clickedDate.getDate()).padStart(2, '0');
+    const formattedDateStr = `${year}-${month}-${day}`;
+    
+    console.log('Formatted date string:', formattedDateStr); // Debug log
     
     // Set modal title with the date
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     document.getElementById('dayModalLabel').textContent = clickedDate.toLocaleDateString('en-US', options);
     
-    // Get content for this day
-    const content = getDailyContent(dateStr);
+    // Get content for this day, using the corrected date string
+    const content = getDailyContent(formattedDateStr);
     document.getElementById('modalContent').innerHTML = content;
+    
+    // Add the fade-in class for animation
+    document.getElementById('modalContent').classList.add('fade-in');
     
     // Open the modal
     const modal = new bootstrap.Modal(document.getElementById('dayModal'));
@@ -286,8 +330,37 @@ function setupModal() {
     });
 }
 
+// Create a variable for the May 14 flower content
+const may14FlowerContent = `
+<div class="text-center mb-4 fade-in">
+    <h4 class="mb-3">Who's an artist? That's you :) </h4>
+    <div class="position-relative" style="max-width: 500px; margin: 0 auto;">
+        <img src="static/images/flowers.jpeg" class="img-fluid rounded shadow mb-3" alt="Flowers" style="max-height: 500px;">
+    </div>
+    <p class="mt-3">Cutest flower bouquet to ever exist! 💐</p>
+</div>
+`;
+
 // Daily content data
 const dailyContent = {
+    // May 2024 entries
+    '2024-05-14': {
+        type: 'image',
+        content: may14FlowerContent
+    },
+    
+    // Make sure it works for the current year as well
+    [(new Date().getFullYear()) + '-05-14']: {
+        type: 'image',
+        content: may14FlowerContent
+    },
+    
+    // Additional format to ensure it works with all date formats
+    '05-14': {
+        type: 'image',
+        content: may14FlowerContent
+    },
+    
     // June 2024 example content
     // Format is 'YYYY-MM-DD': { type: 'note|song', content: '...' }
     
@@ -342,9 +415,28 @@ const dailyContent = {
 
 // Get content for a specific day
 function getDailyContent(dateStr) {
+    console.log('Getting content for date:', dateStr); // Debug log
+    
+    // Special handling for May 14
+    if (dateStr.endsWith('-05-14') || dateStr === '05-14') {
+        console.log('Special handling for May 14');
+        return dailyContent['2024-05-14'].content;
+    }
+    
     // If we have content for this specific day, return it
     if (dailyContent[dateStr]) {
+        console.log('Found exact match for date:', dateStr);
         return dailyContent[dateStr].content;
+    }
+    
+    // Check for month-day only format (MM-DD)
+    const dateParts = dateStr.split('-');
+    if (dateParts.length === 3) {
+        const monthDay = `${dateParts[1]}-${dateParts[2]}`;
+        if (dailyContent[monthDay]) {
+            console.log('Found match for month-day:', monthDay);
+            return dailyContent[monthDay].content;
+        }
     }
     
     // If we don't have specific content, generate a generic message based on the day
@@ -378,6 +470,28 @@ function getDailyContent(dateStr) {
 
 // Helper function to add appropriate click event handler based on environment and date
 function addDayClickHandler(element, date, currentDate) {
+    // Specific handling for May 14th
+    if (date.getMonth() === 4 && date.getDate() === 14) {
+        element.classList.add('special-date');
+        element.addEventListener('click', function(event) {
+            // Ensure we use the correct date for May 14
+            const may14Date = `${date.getFullYear()}-05-14`;
+            console.log('Special May 14 clicked with date:', may14Date);
+            
+            // Create a custom event object with the correct date
+            const customEvent = {
+                currentTarget: {
+                    getAttribute: function() {
+                        return may14Date;
+                    }
+                }
+            };
+            
+            openDayModal(customEvent);
+        });
+        return;
+    }
+    
     // In staging environment, all days are clickable
     if (CONFIG.STAGING) {
         element.addEventListener('click', openDayModal);

@@ -247,6 +247,35 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+/* Special date - May 14th */
+.calendar-day.special-date {
+    background: linear-gradient(145deg, #ff5e92, #e1306c);
+    color: white;
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.calendar-day.special-date:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.5);
+}
+
+.calendar-day.special-date::after {
+    content: '🌸';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 16px;
+    background: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 .calendar-day.empty {
     background: none;
     box-shadow: none;
