@@ -276,6 +276,47 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Gaming date - May 13th */
+.calendar-day.gaming-date {
+    background: linear-gradient(145deg, #5865F2, #404EED);
+    color: white;
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+    animation: gamingPulse 3s infinite;
+}
+
+.calendar-day.gaming-date:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(88, 101, 242, 0.6);
+}
+
+.calendar-day.gaming-date::after {
+    content: '🎧';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 16px;
+    background: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gamingPulse {
+    0% {
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 20px rgba(88, 101, 242, 0.7);
+    }
+    100% {
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+    }
+}
+
 .calendar-day.empty {
     background: none;
     box-shadow: none;

@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update the countdown every second
     setInterval(updateCountdown, 1000);
     
-    // Update today's message
-    updateTodayMessage();
+    // Comment out updateTodayMessage since we removed that container
+    // updateTodayMessage();
     
     // Generate calendar days
     generateCalendar();
@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setupModal();
 });
 
+// Comment out the functions we no longer need
+
+/* 
 // Update today's message
 function updateTodayMessage() {
     const today = new Date();
@@ -106,6 +109,7 @@ function setDefaultTodayMessage(element, date) {
     
     element.textContent = messages[dayOfWeek];
 }
+*/
 
 // Generate calendar days from May 13th to June 21st
 function generateCalendar() {
@@ -330,6 +334,19 @@ function setupModal() {
     });
 }
 
+// Create a variable for the May 13 content with image
+const may13Content = `
+<div class="text-center mb-4 fade-in">
+    <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
+        <img src="static/images/song.jpeg" class="img-fluid rounded shadow mb-4" alt="Late Night Music" style="max-height: 600px;">
+    </div>
+    <p class="mt-3 lead" style="font-style: italic; font-size: 1.1rem;">
+        Not advisable, but let's stay up till 5 in the morning, talking, listening to music 🫠 <br> 
+        Who cares if it makes us mindless zombies, we'll atleast be happy zombies :)
+    </p>
+</div>
+`;
+
 // Create a variable for the May 14 flower content
 const may14FlowerContent = `
 <div class="text-center mb-4 fade-in">
@@ -344,19 +361,24 @@ const may14FlowerContent = `
 // Daily content data
 const dailyContent = {
     // May 2024 entries
-    '2024-05-14': {
+    '2024-05-13': {
         type: 'image',
-        content: may14FlowerContent
+        content: may13Content
     },
     
     // Make sure it works for the current year as well
-    [(new Date().getFullYear()) + '-05-14']: {
+    [(new Date().getFullYear()) + '-05-13']: {
         type: 'image',
-        content: may14FlowerContent
+        content: may13Content
     },
     
     // Additional format to ensure it works with all date formats
-    '05-14': {
+    '05-13': {
+        type: 'image',
+        content: may13Content
+    },
+    
+    '2024-05-14': {
         type: 'image',
         content: may14FlowerContent
     },
@@ -364,11 +386,13 @@ const dailyContent = {
     // June 2024 example content
     // Format is 'YYYY-MM-DD': { type: 'note|song', content: '...' }
     
+    /* Comment out the current date to avoid conflicts
     // Current date with Spotify embed
     [new Date().toISOString().split('T')[0]]: {
         type: 'song',
         content: '<div class="text-center mb-3"><h4>Today\'s Special Song</h4></div><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4TobDQpylJNxkXMH1QUvTp?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><p class="mt-3">Enjoy this special song for today!</p>'
     },
+    */
     
     // Example song embeds
     '2024-06-01': {
@@ -416,6 +440,12 @@ const dailyContent = {
 // Get content for a specific day
 function getDailyContent(dateStr) {
     console.log('Getting content for date:', dateStr); // Debug log
+    
+    // Special handling for May 13th
+    if (dateStr.endsWith('-05-13') || dateStr === '05-13') {
+        console.log('Special handling for May 13th');
+        return dailyContent['2024-05-13'].content;
+    }
     
     // Special handling for May 14
     if (dateStr.endsWith('-05-14') || dateStr === '05-14') {
@@ -470,6 +500,29 @@ function getDailyContent(dateStr) {
 
 // Helper function to add appropriate click event handler based on environment and date
 function addDayClickHandler(element, date, currentDate) {
+    // Specific handling for May 13th - Gaming night theme
+    if (date.getMonth() === 4 && date.getDate() === 13) {
+        element.classList.add('gaming-date');
+        element.setAttribute('title', 'Sleepless night jamming!');
+        element.addEventListener('click', function(event) {
+            // Ensure we use the correct date for May 13
+            const may13Date = `${date.getFullYear()}-05-13`;
+            console.log('Special May 13 clicked with date:', may13Date);
+            
+            // Create a custom event object with the correct date
+            const customEvent = {
+                currentTarget: {
+                    getAttribute: function() {
+                        return may13Date;
+                    }
+                }
+            };
+            
+            openDayModal(customEvent);
+        });
+        return;
+    }
+    
     // Specific handling for May 14th
     if (date.getMonth() === 4 && date.getDate() === 14) {
         element.classList.add('special-date');
