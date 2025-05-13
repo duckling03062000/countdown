@@ -1,7 +1,7 @@
 // Environment Configuration
 const CONFIG = {
-    // Set to true for staging environment, false for production
-    STAGING: true,
+    // Set to "1" for staging environment, "0" for production
+    STAGING: "0",
     
     // Messages
     MESSAGES: {

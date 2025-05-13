@@ -1,12 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Target date: June 21st of the current year
-    const currentYear = new Date().getFullYear();
-    const targetDate = new Date(currentYear, 5, 21); // Month is 0-indexed (5 = June)
-    
-    // If the target date for this year has passed, set to next year
-    if (new Date() > targetDate) {
-        targetDate.setFullYear(currentYear + 1);
-    }
+    // Target date: June 21st, 2025
+    const targetDate = new Date(2025, 5, 21); // Month is 0-indexed (5 = June)
     
     // Update countdown timer
     function updateCountdown() {
@@ -26,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         
         // Update page title with days remaining
-        document.title = `${days} Days Until Summer Solstice`;
+        document.title = `${days} Days Until Summer 2025`;
     }
     
     // Initial update
@@ -115,19 +109,22 @@ function setDefaultTodayMessage(element, date) {
 function generateCalendar() {
     const calendarElement = document.getElementById('calendar');
     const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const targetDate = new Date(currentYear, 5, 21); // June 21st
+    const targetYear = 2025;
+    const targetDate = new Date(targetYear, 5, 21); // June 21st, 2025
     
-    // If the target date for this year has passed, set to next year
-    if (currentDate > targetDate) {
-        targetDate.setFullYear(currentYear + 1);
-    }
+    // Current date projected to 2025 for comparison
+    // This is needed to determine which dates should be "past" in our 2025 calendar
+    const today = new Date();
+    const currentMonth = today.getMonth();
+    const currentDay = today.getDate();
+    // Create a date object for the same month/day but in our target year
+    const projectedCurrentDate = new Date(targetYear, currentMonth, currentDay);
     
     // Clear any existing content
     calendarElement.innerHTML = '';
     
-    // Start date: May 13th of the current year (or next year if target is next year)
-    const startDate = new Date(targetDate.getFullYear(), 4, 13); // Month is 0-indexed (4 = May)
+    // Start date: May 13th, 2025
+    const startDate = new Date(targetYear, 4, 13); // Month is 0-indexed (4 = May)
     
     // Create weekday headers
     const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -176,9 +173,9 @@ function generateCalendar() {
         dayElement.className = 'calendar-day';
         
         // Add classes based on date status
-        if (isSameDay(dateIterator, currentDate)) {
+        if (isSameDay(dateIterator, projectedCurrentDate)) {
             dayElement.classList.add('today');
-        } else if (dateIterator < currentDate) {
+        } else if (dateIterator < projectedCurrentDate) {
             dayElement.classList.add('past');
         } else if (dateIterator > targetDate) {
             dayElement.classList.add('disabled');
@@ -197,7 +194,7 @@ function generateCalendar() {
         dayElement.setAttribute('data-date', formattedDateStr);
         
         // Add appropriate click event based on environment and date
-        addDayClickHandler(dayElement, dateIterator, currentDate);
+        addDayClickHandler(dayElement, dateIterator, projectedCurrentDate);
         
         mayGrid.appendChild(dayElement);
     }
@@ -238,9 +235,9 @@ function generateCalendar() {
         dayElement.className = 'calendar-day';
         
         // Add classes based on date status
-        if (isSameDay(dateIterator, currentDate)) {
+        if (isSameDay(dateIterator, projectedCurrentDate)) {
             dayElement.classList.add('today');
-        } else if (dateIterator < currentDate) {
+        } else if (dateIterator < projectedCurrentDate) {
             dayElement.classList.add('past');
         } else if (dateIterator > targetDate) {
             dayElement.classList.add('disabled');
@@ -259,7 +256,7 @@ function generateCalendar() {
         dayElement.setAttribute('data-date', formattedDateStr);
         
         // Add appropriate click event based on environment and date
-        addDayClickHandler(dayElement, dateIterator, currentDate);
+        addDayClickHandler(dayElement, dateIterator, projectedCurrentDate);
         
         juneGrid.appendChild(dayElement);
     }
@@ -360,8 +357,8 @@ const may14FlowerContent = `
 
 // Daily content data
 const dailyContent = {
-    // May 2024 entries
-    '2024-05-13': {
+    // May 2025 entries
+    '2025-05-13': {
         type: 'image',
         content: may13Content
     },
@@ -378,12 +375,12 @@ const dailyContent = {
         content: may13Content
     },
     
-    '2024-05-14': {
+    '2025-05-14': {
         type: 'image',
         content: may14FlowerContent
     },
     
-    // June 2024 example content
+    // June 2025 example content
     // Format is 'YYYY-MM-DD': { type: 'note|song', content: '...' }
     
     /* Comment out the current date to avoid conflicts
@@ -395,43 +392,43 @@ const dailyContent = {
     */
     
     // Example song embeds
-    '2024-06-01': {
+    '2025-06-01': {
         type: 'song',
         content: '<div class="text-center mb-3"><h4>Summertime Anticipation</h4></div><iframe width="100%" height="315" src="https://www.youtube.com/embed/f5omECqDrQM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p class="mt-3">Kick off June with this summer classic! What are you looking forward to most this summer?</p>'
     },
     
-    '2024-06-05': {
+    '2025-06-05': {
         type: 'song',
         content: '<div class="text-center mb-3"><h4>Midweek Pick-Me-Up</h4></div><iframe src="https://open.spotify.com/embed/track/6nek1Nin9q48AVZcWs9e9D" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><p class="mt-3">A perfect song to boost your energy through the rest of the week!</p>'
     },
     
-    '2024-06-10': {
+    '2025-06-10': {
         type: 'song',
         content: '<div class="text-center mb-3"><h4>Countdown: 11 Days Left!</h4></div><iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/571035771&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><p class="mt-3">Getting closer to our special day. How are you preparing?</p>'
     },
     
     // Example notes and reflections
-    '2024-06-03': {
+    '2025-06-03': {
         type: 'note',
         content: '<div class="alert alert-info p-4"><h4 class="text-center mb-3">18 Days Until June 21st</h4><p>Time for some reflection: What have you accomplished so far this year? What do you hope to achieve by June 21st?</p><p>Write down three goals you want to complete before summer officially begins:</p><ol><li>_____________________</li><li>_____________________</li><li>_____________________</li></ol></div>'
     },
     
-    '2024-06-07': {
+    '2025-06-07': {
         type: 'note',
         content: '<div class="alert alert-warning p-4"><h4 class="text-center mb-3">Two Weeks To Go!</h4><p>Today is a good day to start planning how you\'ll celebrate the summer solstice on June 21st.</p><p>Some traditional ways people celebrate:</p><ul><li>Watch the sunrise or sunset</li><li>Have a bonfire with friends</li><li>Create a flower crown</li><li>Go for a hike or spend time in nature</li><li>Have a picnic</li></ul><p class="mt-3">What will your tradition be?</p></div>'
     },
     
-    '2024-06-15': {
+    '2025-06-15': {
         type: 'note',
         content: '<div class="card"><div class="card-header bg-primary text-white"><h4 class="text-center m-0">Less than a week to go!</h4></div><div class="card-body"><p>The summer solstice is the longest day of the year in the Northern Hemisphere. On June 21st, we\'ll experience the maximum amount of daylight.</p><p>Did you know? The word "solstice" comes from the Latin words "sol" (sun) and "sistere" (to stand still) because the sun appears to pause before reversing direction.</p><div class="text-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Earth-lighting-summer-solstice_EN.png/640px-Earth-lighting-summer-solstice_EN.png" class="img-fluid rounded mt-3" alt="Summer Solstice Diagram"></div></div></div>'
     },
     
-    '2024-06-20': {
+    '2025-06-20': {
         type: 'note',
         content: '<div class="alert alert-success p-4"><h4 class="text-center mb-3">Eve of the Solstice</h4><p>Tomorrow is the big day! The summer solstice marks the official start of summer and the longest day of the year.</p><p>Tonight is the perfect time to set your intentions for the season ahead.</p><p>Take a moment to write down what you want this summer to mean for you:</p><textarea class="form-control mt-3 mb-3" rows="4" placeholder="My summer intentions..."></textarea><p class="font-italic">See you tomorrow for the celebration!</p></div>'
     },
     
-    '2024-06-21': {
+    '2025-06-21': {
         type: 'celebration',
         content: '<div class="text-center"><h3 class="mb-4">🌞 Happy Summer Solstice! 🌞</h3><p class="lead">Today marks the official start of summer and the longest day of the year!</p><div class="my-4"><img src="https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="img-fluid rounded" alt="Summer Celebration"></div><p>Take time today to enjoy the abundance of sunlight, connect with nature, and celebrate the season of growth and vitality.</p><div class="mt-4 mb-3"><iframe width="100%" height="315" src="https://www.youtube.com/embed/u4XJ9xejgOA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p>Here\'s to a beautiful, joy-filled summer ahead!</p></div>'
     }
@@ -444,13 +441,25 @@ function getDailyContent(dateStr) {
     // Special handling for May 13th
     if (dateStr.endsWith('-05-13') || dateStr === '05-13') {
         console.log('Special handling for May 13th');
-        return dailyContent['2024-05-13'].content;
+        return dailyContent['2025-05-13'].content;
     }
     
     // Special handling for May 14
     if (dateStr.endsWith('-05-14') || dateStr === '05-14') {
         console.log('Special handling for May 14');
-        return dailyContent['2024-05-14'].content;
+        return dailyContent['2025-05-14'].content;
+    }
+    
+    // Special handling for June 3rd - Birthday
+    if (dateStr.endsWith('-06-03') || dateStr === '06-03') {
+        console.log('Special handling for June 3rd - Birthday');
+        return dailyContent['2025-06-03'].content;
+    }
+    
+    // Special handling for June 21st - Dreamy
+    if (dateStr.endsWith('-06-21') || dateStr === '06-21') {
+        console.log('Special handling for June 21st - Dreamy');
+        return dailyContent['2025-06-21'].content;
     }
     
     // If we have content for this specific day, return it
@@ -504,59 +513,76 @@ function addDayClickHandler(element, date, currentDate) {
     if (date.getMonth() === 4 && date.getDate() === 13) {
         element.classList.add('gaming-date');
         element.setAttribute('title', 'Sleepless night jamming!');
-        element.addEventListener('click', function(event) {
-            // Ensure we use the correct date for May 13
-            const may13Date = `${date.getFullYear()}-05-13`;
-            console.log('Special May 13 clicked with date:', may13Date);
-            
-            // Create a custom event object with the correct date
-            const customEvent = {
-                currentTarget: {
-                    getAttribute: function() {
-                        return may13Date;
+        // Only make it interactive if it's today or in the past
+        if (date <= currentDate || CONFIG.STAGING === "1") {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 13
+                const may13Date = `${date.getFullYear()}-05-13`;
+                console.log('Special May 13 clicked with date:', may13Date);
+                
+                // Create a custom event object with the correct date
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may13Date;
+                        }
                     }
-                }
-            };
-            
-            openDayModal(customEvent);
-        });
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // If it's in the future and not in staging mode, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
         return;
     }
     
     // Specific handling for May 14th
     if (date.getMonth() === 4 && date.getDate() === 14) {
         element.classList.add('special-date');
-        element.addEventListener('click', function(event) {
-            // Ensure we use the correct date for May 14
-            const may14Date = `${date.getFullYear()}-05-14`;
-            console.log('Special May 14 clicked with date:', may14Date);
-            
-            // Create a custom event object with the correct date
-            const customEvent = {
-                currentTarget: {
-                    getAttribute: function() {
-                        return may14Date;
+        // Only make it interactive if it's today or in the past
+        if (date <= currentDate || CONFIG.STAGING === "1") {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 14
+                const may14Date = `${date.getFullYear()}-05-14`;
+                console.log('Special May 14 clicked with date:', may14Date);
+                
+                // Create a custom event object with the correct date
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may14Date;
+                        }
                     }
-                }
-            };
-            
-            openDayModal(customEvent);
-        });
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // If it's in the future and not in staging mode, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
         return;
     }
     
-    // In staging environment, all days are clickable
-    if (CONFIG.STAGING) {
+    // In staging environment, all days are clickable to show their content
+    if (CONFIG.STAGING === "1") {
         element.addEventListener('click', openDayModal);
         return;
     }
     
-    // In production, only past and present days are clickable
+    // In production (STAGING = "0")
+    // For past and present days, show actual content
     if (date <= currentDate) {
         element.addEventListener('click', openDayModal);
     } else {
-        // For future dates in production, show a waiting message
-        // Also add the current color class to indicate the color cycle position
+        // For future dates in production, apply color classes and make clickable
+        // but show future message instead of trying to load content
         try {
             // Get current index to determine which color to apply
             const storedIndex = localStorage.getItem('messageIndex') || 0;
@@ -570,7 +596,7 @@ function addDayClickHandler(element, date, currentDate) {
             console.warn('Could not access localStorage for color rotation', e);
         }
         
-        // Add click event for the future date message
+        // Make future dates clickable to show the future message
         element.addEventListener('click', function(event) {
             showFutureDateMessage(date);
         });
@@ -579,6 +605,10 @@ function addDayClickHandler(element, date, currentDate) {
 
 // Show message for future dates in production environment
 function showFutureDateMessage(date) {
+    // Format the date for display in the modal title
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+    
     // Get the next message and color in the rotation
     const messageInfo = CONFIG.MESSAGES.getFutureMessage();
     const message = messageInfo.text;
@@ -601,8 +631,9 @@ function showFutureDateMessage(date) {
     
     // Create content for the modal with the specific color class
     const content = `
-        <div class="alert alert-${colorClass} text-center p-4">
+        <div class="alert alert-${colorClass} text-center p-4 fade-in">
             <i class="fas ${iconClass} fa-3x mb-3"></i>
+            <h4 class="mb-3">${formattedDate}</h4>
             <p class="lead">${message}</p>
         </div>
     `;
