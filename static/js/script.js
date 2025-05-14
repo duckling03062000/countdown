@@ -355,6 +355,39 @@ const may14FlowerContent = `
 </div>
 `;
 
+// Create a variable for the May 15 poem content
+const may15PoemContent = `
+<div class="text-center mb-4 fade-in">
+    <h3 class="mb-4" style="color: #ff7e5f; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; font-weight: 600;">Who can write beautiful pieces? You!</h3>
+    <div class="position-relative mb-4" style="max-width: 600px; margin: 0 auto;">
+        <img src="static/images/poem.jpeg" class="img-fluid rounded shadow" alt="Dreams of Meeting" style="max-height: 600px;">
+    </div>
+    <div class="poem-container p-5" style="background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,244,240,0.9) 100%); border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); max-width: 600px; margin: 0 auto; border-left: 4px solid #ff7e5f;">
+        <div style="position: relative;">
+            <span style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 24px; color: #ff7e5f;">❝</span>
+            <p class="mb-4" style="font-style: italic; line-height: 1.8; font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 1.05rem; color: #555;">
+                I do not know your laughter,<br>
+                I do not know the coffee you favor,<br>
+                nor the rhythm of your silence,<br>
+                nor the way your eyes drift when you're lost in thought.<br>
+                <span style="display: block; margin: 8px 0;"></span>
+                Still, something in me<br>
+                reaches for the space you might have filled...
+            </p>
+            <p class="mb-2" style="font-style: italic; line-height: 1.8; font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 1.05rem; color: #555;">
+                I do not know your days,<br>
+                I do not know your laughter yet,<br>
+                And still—<br>
+                your absence feels familiar,<br>
+                like a room I've only dreamed<br>
+                but wake to missing.
+            </p>
+            <span style="position: absolute; bottom: -25px; right: 10px; font-size: 24px; color: #ff7e5f;">❞</span>
+        </div>
+    </div>
+</div>
+`;
+
 // Daily content data
 const dailyContent = {
     // May 2025 entries
@@ -378,6 +411,11 @@ const dailyContent = {
     '2025-05-14': {
         type: 'image',
         content: may14FlowerContent
+    },
+    
+    '2025-05-15': {
+        type: 'poem',
+        content: may15PoemContent
     },
     
     // June 2025 example content
@@ -448,6 +486,12 @@ function getDailyContent(dateStr) {
     if (dateStr.endsWith('-05-14') || dateStr === '05-14') {
         console.log('Special handling for May 14');
         return dailyContent['2025-05-14'].content;
+    }
+    
+    // Special handling for May 15 - Poem
+    if (dateStr.endsWith('-05-15') || dateStr === '05-15') {
+        console.log('Special handling for May 15 - Poem');
+        return dailyContent['2025-05-15'].content;
     }
     
     // Special handling for June 3rd - Birthday
@@ -555,6 +599,115 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return may14Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // If it's in the future and not in staging mode, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for May 15th - Poem date
+    if (date.getMonth() === 4 && date.getDate() === 15) {
+        element.classList.add('poem-date');
+        element.setAttribute('title', 'A beautiful poem awaits!');
+        
+        // Add cute badge background
+        const badgeBackground = document.createElement('div');
+        badgeBackground.style.position = 'absolute';
+        badgeBackground.style.top = '-8px';
+        badgeBackground.style.right = '-8px';
+        badgeBackground.style.width = '30px';
+        badgeBackground.style.height = '30px';
+        badgeBackground.style.background = 'rgba(255,255,255,0.85)';
+        badgeBackground.style.borderRadius = '50%';
+        badgeBackground.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15)';
+        badgeBackground.style.display = 'flex';
+        badgeBackground.style.alignItems = 'center';
+        badgeBackground.style.justifyContent = 'center';
+        badgeBackground.style.zIndex = '2';
+        
+        // Create a single combined icon
+        const combinedIcon = document.createElement('div');
+        combinedIcon.style.position = 'relative';
+        combinedIcon.style.width = '18px';
+        combinedIcon.style.height = '18px';
+        
+        // Add book icon
+        const bookIcon = document.createElement('span');
+        bookIcon.innerHTML = '📚';
+        bookIcon.className = 'book-icon';
+        bookIcon.style.fontSize = '12px';
+        bookIcon.style.position = 'absolute';
+        bookIcon.style.bottom = '-1px';
+        bookIcon.style.left = '0px';
+        bookIcon.style.filter = 'drop-shadow(0 1px 1px rgba(0,0,0,0.2))';
+        bookIcon.style.transform = 'rotate(-10deg)';
+        bookIcon.style.zIndex = '2';
+        
+        // Add pen icon
+        const penIcon = document.createElement('span');
+        penIcon.innerHTML = '✒️';
+        penIcon.className = 'poem-icon';
+        penIcon.style.fontSize = '12px';
+        penIcon.style.position = 'absolute';
+        penIcon.style.top = '-3px';
+        penIcon.style.right = '-2px';
+        penIcon.style.filter = 'drop-shadow(0 1px 1px rgba(0,0,0,0.2))';
+        penIcon.style.transform = 'rotate(30deg)';
+        penIcon.style.zIndex = '3';
+        
+        // Add icons to container
+        combinedIcon.appendChild(bookIcon);
+        combinedIcon.appendChild(penIcon);
+        badgeBackground.appendChild(combinedIcon);
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(badgeBackground);
+        
+        // Add a cute pastel background with sparkle effect
+        element.style.background = 'linear-gradient(135deg, #f8e2ff 0%, #ecd1ff 100%)';
+        element.style.color = '#8440a1';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(158, 79, 192, 0.2)';
+        
+        // Add sparkle animations using pseudo-elements via a class
+        element.classList.add('sparkle-effect');
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        combinedIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1) rotate(2deg)';
+            combinedIcon.style.transform = 'scale(1.2)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0)';
+            combinedIcon.style.transform = 'scale(1)';
+        });
+        
+        // Only make it interactive if it's today or in the past
+        if (date <= currentDate || CONFIG.STAGING === "1") {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 15
+                const may15Date = `${date.getFullYear()}-05-15`;
+                console.log('Special May 15 clicked with date:', may15Date);
+                
+                // Create a custom event object with the correct date
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may15Date;
                         }
                     }
                 };

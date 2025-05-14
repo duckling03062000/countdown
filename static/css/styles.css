@@ -575,4 +575,57 @@ h1 {
         width: 10px;
         height: 10px;
     }
+}
+
+/* Special styling for poem date (May 15) */
+.sparkle-effect {
+    overflow: visible !important;
+    position: relative;
+}
+
+.sparkle-effect::before,
+.sparkle-effect::after {
+    content: "✨";
+    font-size: 12px;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.sparkle-effect::before {
+    top: -5px;
+    left: -5px;
+    transform: rotate(-20deg);
+}
+
+.sparkle-effect::after {
+    bottom: -5px;
+    right: -5px;
+    transform: rotate(20deg);
+}
+
+.sparkle-effect:hover::before,
+.sparkle-effect:hover::after {
+    opacity: 1;
+}
+
+.sparkle-effect:hover::before {
+    animation: sparkleMove 1.5s infinite;
+}
+
+.sparkle-effect:hover::after {
+    animation: sparkleMove 2s infinite;
+}
+
+@keyframes sparkleMove {
+    0% {
+        transform: rotate(-20deg) scale(1);
+    }
+    50% {
+        transform: rotate(0deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(20deg) scale(1);
+    }
 } 
