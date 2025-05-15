@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set up modal functionality
     setupModal();
+    
+    // Listen for when a modal is shown and set up audio player interaction
+    const modal = document.getElementById('dayModal');
+    if (modal) {
+        modal.addEventListener('shown.bs.modal', function() {
+            setupAudioPlayerInteraction();
+        });
+    }
 });
 
 // Comment out the functions we no longer need
@@ -388,6 +396,68 @@ const may15PoemContent = `
 </div>
 `;
 
+// Create a variable for the May 16 piano content
+const may16PianoContent = `
+<div class="text-center mb-4 fade-in">
+    <h3 class="mb-4" style="color: #4a6f8a; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; font-weight: 600;"> Smitten :) </h3>
+    <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
+        <img src="static/images/piano.jpeg" class="img-fluid rounded shadow mb-4" alt="Piano Keys" style="max-height: 600px;">
+    </div>
+    <div class="audio-player-container p-4 mb-4" style="background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,248,255,0.9) 100%); border-radius: 16px; box-shadow: 0 12px 30px rgba(0,0,0,0.15); max-width: 600px; margin: 0 auto; border-left: 4px solid #4a6f8a; position: relative; overflow: hidden; transition: all 0.3s ease;">
+        <!-- Decorative musical notes -->
+        <div style="position: absolute; top: 10px; left: 10px; font-size: 16px; opacity: 0.4; transform: rotate(-15deg);">🎵</div>
+        <div style="position: absolute; bottom: 15px; right: 15px; font-size: 18px; opacity: 0.4; transform: rotate(10deg);">🎶</div>
+        
+        <!-- Audio player title with icon -->
+      
+        
+        <!-- Custom styled audio player -->
+        <div style="background: linear-gradient(135deg, #ebf5fc 0%, #dceeff 100%); border-radius: 12px; padding: 18px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 4px 15px rgba(0,0,0,0.08); position: relative; transition: all 0.3s ease;" 
+             onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='inset 0 1px 3px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.12)';" 
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='inset 0 1px 3px rgba(0,0,0,0.1), 0 4px 15px rgba(0,0,0,0.08)';">
+            
+            <!-- Large play button that controls the audio -->
+            <div class="position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -95%); z-index: 10; cursor: pointer; width: 50px; height: 50px; background: linear-gradient(135deg, #4a6f8a, #3a5d74); border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease; pointer-events: none;"
+                 id="customPlayButton">
+                <div style="width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent #ffffff; margin-left: 4px;"></div>
+            </div>
+            
+            <audio controls class="w-100" style="border-radius: 8px; height: 40px; position: relative; z-index: 5;" id="audioPlayer">
+                <source src="static/audio/dooriyan.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <!-- Custom wave visualization design element -->
+            <div class="d-flex justify-content-between mt-3" style="height: 20px;">
+                <div class="sound-wave" style="display: flex; align-items: flex-end; width: 100%; gap: 3px;">
+                    <div style="width: 3px; height: 12px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 18px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 7px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 15px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 10px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 18px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 20px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 14px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 9px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 19px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 8px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 15px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 6px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 17px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 22px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 9px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 14px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 20px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 12px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                    <div style="width: 3px; height: 8px; background: linear-gradient(to top, #4a6f8a, #8ab0c1); border-radius: 3px;"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+`;
+
 // Daily content data
 const dailyContent = {
     // May 2025 entries
@@ -416,6 +486,11 @@ const dailyContent = {
     '2025-05-15': {
         type: 'poem',
         content: may15PoemContent
+    },
+    
+    '2025-05-16': {
+        type: 'image',
+        content: may16PianoContent
     },
     
     // June 2025 example content
@@ -492,6 +567,12 @@ function getDailyContent(dateStr) {
     if (dateStr.endsWith('-05-15') || dateStr === '05-15') {
         console.log('Special handling for May 15 - Poem');
         return dailyContent['2025-05-15'].content;
+    }
+    
+    // Special handling for May 16 - Piano
+    if (dateStr.endsWith('-05-16') || dateStr === '05-16') {
+        console.log('Special handling for May 16 - Piano');
+        return dailyContent['2025-05-16'].content;
     }
     
     // Special handling for June 3rd - Birthday
@@ -723,6 +804,80 @@ function addDayClickHandler(element, date, currentDate) {
         return;
     }
     
+    // Specific handling for May 16th - Piano date
+    if (date.getMonth() === 4 && date.getDate() === 16) {
+        element.classList.add('piano-date');
+        element.setAttribute('title', 'Smitten :)');
+        
+        // Add piano icon
+        const pianoIcon = document.createElement('span');
+        pianoIcon.innerHTML = '🎹';
+        pianoIcon.style.position = 'absolute';
+        pianoIcon.style.top = '-8px';
+        pianoIcon.style.right = '-8px';
+        pianoIcon.style.fontSize = '16px';
+        pianoIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        pianoIcon.style.zIndex = '2';
+        pianoIcon.style.background = 'rgba(255,255,255,0.9)';
+        pianoIcon.style.borderRadius = '50%';
+        pianoIcon.style.width = '25px';
+        pianoIcon.style.height = '25px';
+        pianoIcon.style.display = 'flex';
+        pianoIcon.style.alignItems = 'center';
+        pianoIcon.style.justifyContent = 'center';
+        pianoIcon.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15)';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(pianoIcon);
+        
+        // Add styling for the date element
+        element.style.background = 'linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%)';
+        element.style.color = '#006064';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(0, 172, 193, 0.2)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        pianoIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            pianoIcon.style.transform = 'scale(1.2)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            pianoIcon.style.transform = 'scale(1)';
+        });
+        
+        // Only make it interactive if it's today or in the past
+        if (date <= currentDate || CONFIG.STAGING === "1") {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 16
+                const may16Date = `${date.getFullYear()}-05-16`;
+                console.log('Special May 16 clicked with date:', may16Date);
+                
+                // Create a custom event object with the correct date
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may16Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // If it's in the future and not in staging mode, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
     // In staging environment, all days are clickable to show their content
     if (CONFIG.STAGING === "1") {
         element.addEventListener('click', openDayModal);
@@ -824,3 +979,47 @@ function createAudioContentExample() {
 //     type: 'audio',
 //     content: createAudioContentExample()
 // }; 
+
+// Function to set up the audio player interaction
+function setupAudioPlayerInteraction() {
+    const audioPlayer = document.getElementById('audioPlayer');
+    const customPlayBtn = document.getElementById('customPlayButton');
+    const audioContainer = audioPlayer?.closest('div');
+    
+    if (!audioPlayer || !customPlayBtn || !audioContainer) return;
+    
+    // Show play button on hover
+    audioContainer.addEventListener('mouseenter', function() {
+        customPlayBtn.style.opacity = '0.9';
+        customPlayBtn.style.transform = 'translate(-50%, -95%) scale(1.1)';
+        customPlayBtn.style.pointerEvents = 'auto';
+    });
+    
+    audioContainer.addEventListener('mouseleave', function() {
+        customPlayBtn.style.opacity = '0';
+        customPlayBtn.style.transform = 'translate(-50%, -95%) scale(1)';
+        customPlayBtn.style.pointerEvents = 'none';
+    });
+    
+    // Handle play/pause with the custom button
+    customPlayBtn.addEventListener('click', function() {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            // Change to pause symbol
+            this.innerHTML = '<div style="width: 16px; height: 16px; background: white; border-radius: 2px;"></div>';
+        } else {
+            audioPlayer.pause();
+            // Change back to play symbol
+            this.innerHTML = '<div style="width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent #ffffff; margin-left: 4px;"></div>';
+        }
+    });
+    
+    // Update button state when audio plays or pauses
+    audioPlayer.addEventListener('play', function() {
+        customPlayBtn.innerHTML = '<div style="width: 16px; height: 16px; background: white; border-radius: 2px;"></div>';
+    });
+    
+    audioPlayer.addEventListener('pause', function() {
+        customPlayBtn.innerHTML = '<div style="width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent #ffffff; margin-left: 4px;"></div>';
+    });
+} 

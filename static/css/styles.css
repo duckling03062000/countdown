@@ -487,6 +487,44 @@ h1 {
     }
 }
 
+/* Sound wave animations for audio player */
+@keyframes soundWavePulse {
+    0%, 100% {
+        transform: scaleY(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scaleY(0.7);
+        opacity: 0.5;
+    }
+}
+
+.sound-wave div {
+    animation: soundWavePulse 1.5s ease-in-out infinite;
+    transform-origin: bottom;
+}
+
+.sound-wave div:nth-child(odd) {
+    animation-delay: 0.3s;
+}
+
+.sound-wave div:nth-child(even) {
+    animation-delay: 0.5s;
+}
+
+.sound-wave div:nth-child(3n) {
+    animation-delay: 0.1s;
+}
+
+.sound-wave div:nth-child(5n) {
+    animation-delay: 0.7s;
+}
+
+/* Audio player fade-in */
+.audio-player-container {
+    animation: fadeIn 1s ease-out;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .countdown-container {
