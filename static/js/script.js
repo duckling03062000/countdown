@@ -408,8 +408,7 @@ const may16PianoContent = `
         <div style="position: absolute; top: 10px; left: 10px; font-size: 16px; opacity: 0.4; transform: rotate(-15deg);">🎵</div>
         <div style="position: absolute; bottom: 15px; right: 15px; font-size: 18px; opacity: 0.4; transform: rotate(10deg);">🎶</div>
         
-        <!-- Audio player title with icon -->
-      
+       
         
         <!-- Custom styled audio player -->
         <div style="background: linear-gradient(135deg, #ebf5fc 0%, #dceeff 100%); border-radius: 12px; padding: 18px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 4px 15px rgba(0,0,0,0.08); position: relative; transition: all 0.3s ease;" 
@@ -454,8 +453,407 @@ const may16PianoContent = `
             </div>
         </div>
         
-    </div>
+      </div>
 </div>
+`;
+
+// Create a variable for the May 17 question content
+const may17QuestionContent = `
+<div class="text-center mb-4 fade-in">
+    
+    
+    <!-- Window UI Design -->
+    <div id="question-window" class="window-container" style="max-width: 500px; margin: 0 auto; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.25); border: 1px solid rgba(0,0,0,0.1); position: relative;">
+        <!-- Window title bar -->
+        <div class="window-title-bar" style="background: linear-gradient(90deg, #7952b3 0%, #5d4a8a 100%); color: white; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center;">
+            <div class="window-title" style="font-weight: 600; display: flex; align-items: center;">
+                <span style="font-size: 16px; margin-right: 8px;">❓</span>
+                Important Question
+            </div>
+            <div class="window-controls">
+                <span style="display: inline-block; width: 12px; height: 12px; background-color: #ff5f57; border-radius: 50%; margin-left: 6px;"></span>
+                <span style="display: inline-block; width: 12px; height: 12px; background-color: #ffbd2e; border-radius: 50%; margin-left: 6px;"></span>
+                <span style="display: inline-block; width: 12px; height: 12px; background-color: #28c940; border-radius: 50%; margin-left: 6px;"></span>
+            </div>
+        </div>
+        
+        <!-- Window content -->
+        <div class="window-content p-4" style="padding: 25px;">
+            <div class="question-container text-center">
+                <h4 style="font-size: 1.5rem; margin-bottom: 20px; color: #5d4a8a;">Make a choice</h4>
+                
+                <!-- Hearts overlay for the entire screen -->
+                <div id="screen-hearts-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;"></div>
+                
+                <div id="options-container" class="options-container" style="display: flex; flex-direction: column; gap: 15px; max-width: 300px; margin: 0 auto; position: relative; height: 170px; overflow: visible;">
+                    <!-- Option A - Amir -->
+                    <div id="amir-container" style="position: relative; z-index: 5; overflow: visible;">
+                        <button id="option-amir" class="option-button" 
+                            onmouseenter="this.style.borderColor='#ff85c0'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(214, 51, 132, 0.2)'; this.style.background='rgba(255, 228, 247, 0.5)'; for(let i=0; i<15; i++) {setTimeout(function(){createFloatingHeart();}, i*100);}"
+                            onmouseleave="this.style.borderColor='#e9ecef'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'; this.style.background='white';"
+                            onclick="document.getElementById('wise-lady-banner').style.opacity='1'; setTimeout(function(){document.getElementById('wise-lady-banner').style.opacity='0';}, 3000); createHeartExplosion(); document.getElementById('answer-text').innerHTML='Great choice! Amir is flattered! ❤️'; document.getElementById('answer-display').style.opacity='1'; this.style.borderColor='#7952b3'; this.style.backgroundColor='rgba(121, 82, 179, 0.1)';"
+                            style="padding: 15px; width: 100%; background: white; border: 2px solid #e9ecef; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; font-size: 1.1rem; font-weight: 500; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative;">
+                            A) Amir
+                        </button>
+                    </div>
+                    
+                    <!-- Option B - Coffee (the text will run away) -->
+                    <div id="coffee-container" style="position: absolute; top: 80px; left: 0; width: 100%; z-index: 2;">
+                        <button id="option-coffee" class="option-button"
+                            onmouseenter="this.style.backgroundColor='#fff8e1'; this.style.borderColor='#ffca28'; this.style.boxShadow='0 8px 16px rgba(255, 152, 0, 0.2)'; this.style.transform='translateY(-3px)'; this.querySelector('#coffee-text').style.fontWeight='bold'; this.querySelector('#coffee-text').style.color='#d84315';"
+                            onmouseleave="this.style.backgroundColor='white'; this.style.borderColor='#e9ecef'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)'; this.style.transform='translateY(0)'; this.querySelector('#coffee-text').style.fontWeight='500'; this.querySelector('#coffee-text').style.color='initial';"
+                            onclick="
+                            // Simple movement approach - reset position first
+                            this.parentNode.style.left = '0px';
+                            this.parentNode.style.top = '80px';
+                            this.parentNode.style.transform = 'none';
+                            
+                            // Count attempts
+                            this.coffeeAttempts = (this.coffeeAttempts || 0) + 1;
+                            document.getElementById('crying-face').style.opacity='1';
+                            if(this.coffeeAttempts >= 3) document.getElementById('encouragement').style.opacity='1';
+                            
+                            // Now move the button (with simpler approach)
+                            let randomX = Math.floor((Math.random() * 80) - 40);
+                            let randomY = Math.floor((Math.random() * 60) - 30);
+                            this.parentNode.style.left = randomX + 'px';
+                            this.parentNode.style.top = (80 + randomY) + 'px';
+                            
+                            // Show broken hearts
+                            const container = document.getElementById('screen-hearts-container');
+                            if (container) {
+                                // Clear previous hearts
+                                container.innerHTML = '';
+                                
+                                // Create 15 broken hearts
+                                for (let i = 0; i < 15; i++) {
+                                    const delay = i * 100;
+                                    setTimeout(function() {
+                                        const heart = document.createElement('div');
+                                        heart.textContent = '💔';
+                                        heart.style.position = 'absolute';
+                                        heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                                        heart.style.opacity = '0';
+                                        heart.style.zIndex = '10000';
+                                        heart.style.pointerEvents = 'none';
+                                        heart.style.left = (50 + (Math.random() * 30 - 15)) + '%';
+                                        heart.style.top = (50 + (Math.random() * 30 - 15)) + '%';
+                                        container.appendChild(heart);
+                                        
+                                        // Animate heart
+                                        setTimeout(function() {
+                                            heart.style.transition = 'all 2s cubic-bezier(0.4, 0, 0.2, 1)';
+                                            heart.style.opacity = '0.9';
+                                            const randomRotate = (Math.random() * 40 - 20);
+                                            const randomFall = (Math.random() * 30 + 20);
+                                            heart.style.transform = 'translateY(' + randomFall + 'vh) rotate(' + randomRotate + 'deg)';
+                                            
+                                            // Fade out
+                                            setTimeout(function() { heart.style.opacity = '0'; }, 1500);
+                                            
+                                            // Remove heart
+                                            setTimeout(function() { 
+                                                if (heart && heart.parentNode) heart.parentNode.removeChild(heart);
+                                            }, 3000);
+                                        }, 10);
+                                    }, delay);
+                                }
+                            }
+                            
+                            // Show message directly
+                            const answerDisplay = document.getElementById('answer-display');
+                            const answerText = document.getElementById('answer-text');
+                            if (answerDisplay && answerText) {
+                                const messages = [
+                                    'No',
+                                    'Noooo',
+                                    'Noooooooooooooooooo',
+                                    'You should chose Amir.. not kidding.. this is Queen Coffee herself speaking',
+                                    'Amir is the best choice.. I promise..',
+                                    'Pakkka Promise..',
+                                    
+                                ];
+                                
+                                // Use simpler index tracking
+                                if (!window.coffeeMessageIndex) window.coffeeMessageIndex = 0;
+                                const currentMessage = messages[window.coffeeMessageIndex];
+                                
+                                // Increment counter for next time, reset if we reach the end
+                                window.coffeeMessageIndex = (window.coffeeMessageIndex + 1) % messages.length;
+                                
+                                // Display the current message and make it visible permanently
+                                answerText.innerHTML = currentMessage;
+                                answerDisplay.style.opacity = '1';
+                            }"
+                            style="padding: 15px; width: 100%; background: white; border: 2px solid #e9ecef; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; font-size: 1.1rem; font-weight: 500; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                            <span id="coffee-text" style="position: relative; transition: all 0.2s ease;">B) Coffee</span>
+                        </button>
+                        
+                        <!-- Crying face - initially hidden -->
+                        <div id="crying-face" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); font-size: 1.2rem; opacity: 0; transition: opacity 0.3s ease;">😢</div>
+                    </div>
+                </div>
+                
+                <!-- Answer Display -->
+                <div id="answer-display" class="mt-5" style="height: 80px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease;">
+                    <p id="answer-text" style="font-size: 1.2rem; color: #5d4a8a; background-color: rgba(121, 82, 179, 0.1); padding: 12px 20px; border-radius: 8px; margin: 0;"></p>
+                </div>
+                
+                
+                <!-- Wise Lady Message (initially hidden) -->
+                <div id="wise-lady-banner" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255,228,247,0.9); color: #d63384; padding: 15px 30px; border-radius: 20px; font-weight: 600; font-size: 1.5rem; opacity: 0; transition: all 0.5s ease; white-space: nowrap; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 10000; pointer-events: none;">
+                    A Wise Lady Indeed! 💖
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <p class="mt-4 text-muted" style="font-style: italic;">Remember, Amir can learn to make coffee, but coffee can't learn to make an Amir</p>
+</div>
+
+<script>
+// Direct inline functions that don't rely on complex event handling
+function createFloatingHeart() {
+    const heart = document.createElement('div');
+    heart.textContent = ['❤️', '💖', '💕', '💓', '💗'][Math.floor(Math.random() * 5)];
+    heart.style.position = 'absolute';
+    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+    heart.style.opacity = '0';
+    heart.style.zIndex = '10000';
+    heart.style.pointerEvents = 'none';
+    heart.style.left = (Math.random() * 100) + '%';
+    heart.style.top = (Math.random() * 100) + '%';
+    
+    const container = document.getElementById('screen-hearts-container');
+    if (container) container.appendChild(heart);
+    
+    setTimeout(function() {
+        heart.style.transition = 'opacity 0.5s ease, transform ' + (Math.random() * 2 + 3) + 's ease-out';
+        heart.style.opacity = '0.7';
+        heart.style.transform = 'translateY(-' + (Math.random() * 30 + 20) + 'vh)';
+    }, 10);
+    
+    setTimeout(function() {
+        if (heart.parentNode) heart.parentNode.removeChild(heart);
+    }, 5000);
+}
+
+// New function to show broken hearts when coffee is clicked
+function showBrokenHearts() {
+    const container = document.getElementById('screen-hearts-container');
+    if (!container) return;
+    
+    // Create broken hearts
+    for (let i = 0; i < 15; i++) {
+        setTimeout(function() {
+            const heart = document.createElement('div');
+            heart.textContent = '💔';
+            heart.style.position = 'absolute';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.opacity = '0';
+            heart.style.zIndex = '10000';
+            heart.style.pointerEvents = 'none';
+            
+            // Position hearts around the coffee button area
+            const coffeeButton = document.getElementById('option-coffee');
+            if (coffeeButton) {
+                const rect = coffeeButton.getBoundingClientRect();
+                const centerX = (rect.left + rect.right) / 2;
+                const centerY = (rect.top + rect.bottom) / 2;
+                
+                // Convert to percentage of viewport
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+                const leftPercent = (centerX / viewportWidth * 100);
+                const topPercent = (centerY / viewportHeight * 100);
+                
+                // Position around the center with some randomness
+                heart.style.left = (leftPercent + (Math.random() * 30 - 15)) + '%';
+                heart.style.top = (topPercent + (Math.random() * 30 - 15)) + '%';
+            } else {
+                // Fallback if button not found
+                heart.style.left = (Math.random() * 100) + '%';
+                heart.style.top = (Math.random() * 100) + '%';
+            }
+            
+            container.appendChild(heart);
+            
+            // Animate falling and rotating broken hearts
+            setTimeout(function() {
+                heart.style.transition = 'all 2s cubic-bezier(0.4, 0, 0.2, 1)';
+                heart.style.opacity = '0.9';
+                const randomRotate = (Math.random() * 40 - 20);
+                const randomFall = (Math.random() * 30 + 20);
+                heart.style.transform = 'translateY(' + randomFall + 'vh) rotate(' + randomRotate + 'deg)';
+                
+                // Fade out
+                setTimeout(function() {
+                    heart.style.opacity = '0';
+                }, 1500);
+            }, 10);
+            
+            // Remove after animation
+            setTimeout(function() {
+                if (heart.parentNode) heart.parentNode.removeChild(heart);
+            }, 3000);
+        }, i * 100);
+    }
+}
+
+// New function to show rejection messages when coffee is clicked
+function showRejectionMessage() {
+    const answerDisplay = document.getElementById('answer-display');
+    const answerText = document.getElementById('answer-text');
+    
+    if (!answerDisplay || !answerText) return;
+    
+    // Array of rejection messages
+    const messages = [
+        "No. Choose Amir.",
+        "No. Amir can keep you awake too.",
+        "No. Choose Amir. Amir can be sweet too.",
+        "No, bad choice!"
+    ];
+    
+    // Select a random message
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    
+    // Display the message
+    answerText.innerHTML = randomMessage;
+    answerDisplay.style.opacity = '1';
+    
+    // Hide the message after 3 seconds
+    setTimeout(function() {
+        answerDisplay.style.opacity = '0';
+    }, 2000);
+}
+
+function createHeartExplosion() {
+    const container = document.getElementById('screen-hearts-container');
+    if (!container) return;
+    
+    for (let i = 0; i < 50; i++) {
+        setTimeout(function() {
+            const heart = document.createElement('div');
+            heart.textContent = ['❤️', '💖', '💕', '💓', '💗'][Math.floor(Math.random() * 5)];
+            heart.style.position = 'absolute';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.opacity = '0';
+            heart.style.zIndex = '10000';
+            heart.style.pointerEvents = 'none';
+            heart.style.left = '50%';
+            heart.style.top = '50%';
+            
+            container.appendChild(heart);
+            
+            setTimeout(function() {
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 70 + 30;
+                const xMovement = Math.cos(angle) * distance;
+                const yMovement = Math.sin(angle) * distance;
+                
+                heart.style.transition = 'all 1.5s cubic-bezier(0.1, 0.8, 0.3, 1)';
+                heart.style.opacity = '0.9';
+                heart.style.transform = 'translate(' + xMovement + 'vw, ' + yMovement + 'vh)';
+                
+                setTimeout(function() {
+                    heart.style.opacity = '0';
+                }, 1000);
+            }, 10);
+            
+            setTimeout(function() {
+                if (heart.parentNode) heart.parentNode.removeChild(heart);
+            }, 5000);
+        }, i * 40);
+    }
+}
+
+// Add a mousemove handler for the coffee button
+document.addEventListener('DOMContentLoaded', function() {
+    function handleCoffeeMouseMove(e) {
+        const coffeeButton = document.getElementById('option-coffee');
+        const coffeeContainer = document.getElementById('coffee-container');
+        const coffeeText = document.getElementById('coffee-text');
+        const cryingFace = document.getElementById('crying-face');
+        const optionsContainer = document.getElementById('options-container');
+        
+        if (!coffeeButton || !coffeeContainer || !optionsContainer) return;
+        
+        const coffeeBtnRect = coffeeButton.getBoundingClientRect();
+        const containerRect = optionsContainer.getBoundingClientRect();
+        
+        // Check if mouse is DIRECTLY over the coffee button (not just near it)
+        if (
+            e.clientX >= coffeeBtnRect.left && 
+            e.clientX <= coffeeBtnRect.right && 
+            e.clientY >= coffeeBtnRect.top && 
+            e.clientY <= coffeeBtnRect.bottom
+        ) {
+            if (cryingFace) cryingFace.style.opacity = '1';
+            
+            if (coffeeText) {
+                const mouseX = e.clientX;
+                const coffeeTextRect = coffeeText.getBoundingClientRect();
+                
+                if (mouseX < (coffeeTextRect.left + coffeeTextRect.right) / 2) {
+                    coffeeText.style.transform = 'translateX(40px)';
+                } else {
+                    coffeeText.style.transform = 'translateX(-40px)';
+                }
+            }
+            
+            const btnCenterX = (coffeeBtnRect.left + coffeeBtnRect.right) / 2 - containerRect.left;
+            const btnCenterY = (coffeeBtnRect.top + coffeeBtnRect.bottom) / 2 - containerRect.top;
+            
+            const mouseContainerX = e.clientX - containerRect.left;
+            const mouseContainerY = e.clientY - containerRect.top;
+            
+            const distX = btnCenterX - mouseContainerX;
+            const distY = btnCenterY - mouseContainerY;
+            
+            // Always move the button when directly hovered (no magnitude check needed)
+            const moveX = (distX / Math.max(Math.sqrt(distX*distX + distY*distY), 1)) * 80;
+            const moveY = (distY / Math.max(Math.sqrt(distX*distX + distY*distY), 1)) * 40;
+            
+            const containerWidth = containerRect.width;
+            const containerHeight = containerRect.height;
+            const btnWidth = coffeeBtnRect.width;
+            const btnHeight = coffeeBtnRect.height;
+            
+            let newLeft = btnCenterX + moveX - btnWidth/2;
+            let newTop = btnCenterY + moveY - btnHeight/2;
+            
+            newLeft = Math.max(0, Math.min(containerWidth - btnWidth, newLeft));
+            newTop = Math.max(60, Math.min(containerHeight - btnHeight, newTop));
+            
+            coffeeContainer.style.position = 'absolute';
+            coffeeContainer.style.left = newLeft + 'px';
+            coffeeContainer.style.top = newTop + 'px';
+            coffeeContainer.style.transition = 'left 0.2s ease, top 0.2s ease';
+            
+            const tiltAngle = (Math.random() * 6) - 3;
+            coffeeButton.style.transform = 'rotate(' + tiltAngle + 'deg)';
+        } else {
+            if (coffeeText) coffeeText.style.transform = 'translateX(0)';
+            if (cryingFace) cryingFace.style.opacity = '0';
+        }
+    }
+    
+    // Apply the event handler to both document and modal content
+    document.addEventListener('mousemove', handleCoffeeMouseMove);
+    
+    // Listen for modal shown events to set up handlers
+    const modal = document.getElementById('dayModal');
+    if (modal) {
+        modal.addEventListener('shown.bs.modal', function() {
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.addEventListener('mousemove', handleCoffeeMouseMove);
+            }
+        });
+    }
+});
+</script>
 `;
 
 // Daily content data
@@ -491,6 +889,11 @@ const dailyContent = {
     '2025-05-16': {
         type: 'image',
         content: may16PianoContent
+    },
+    
+    '2025-05-17': {
+        type: 'interactive',
+        content: may17QuestionContent
     },
     
     // June 2025 example content
@@ -573,6 +976,12 @@ function getDailyContent(dateStr) {
     if (dateStr.endsWith('-05-16') || dateStr === '05-16') {
         console.log('Special handling for May 16 - Piano');
         return dailyContent['2025-05-16'].content;
+    }
+    
+    // Special handling for May 17 - Question Window
+    if (dateStr.endsWith('-05-17') || dateStr === '05-17') {
+        console.log('Special handling for May 17 - Question Window');
+        return dailyContent['2025-05-17'].content;
     }
     
     // Special handling for June 3rd - Birthday
@@ -863,6 +1272,80 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return may16Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // If it's in the future and not in staging mode, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for May 17th - Question window
+    if (date.getMonth() === 4 && date.getDate() === 17) {
+        element.classList.add('question-date');
+        element.setAttribute('title', 'An important question awaits');
+        
+        // Add window icon
+        const windowIcon = document.createElement('span');
+        windowIcon.innerHTML = '💬';
+        windowIcon.style.position = 'absolute';
+        windowIcon.style.top = '-8px';
+        windowIcon.style.right = '-8px';
+        windowIcon.style.fontSize = '16px';
+        windowIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        windowIcon.style.zIndex = '2';
+        windowIcon.style.background = 'rgba(255,255,255,0.9)';
+        windowIcon.style.borderRadius = '50%';
+        windowIcon.style.width = '25px';
+        windowIcon.style.height = '25px';
+        windowIcon.style.display = 'flex';
+        windowIcon.style.alignItems = 'center';
+        windowIcon.style.justifyContent = 'center';
+        windowIcon.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15)';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(windowIcon);
+        
+        // Add styling for the date element
+        element.style.background = 'linear-gradient(135deg, #e5dbfa 0%, #d7c6f8 100%)';
+        element.style.color = '#5d4a8a';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(93, 74, 138, 0.2)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        windowIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            windowIcon.style.transform = 'scale(1.2)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            windowIcon.style.transform = 'scale(1)';
+        });
+        
+        // Only make it interactive if it's today or in the past
+        if (date <= currentDate || CONFIG.STAGING === "1") {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 17
+                const may17Date = `${date.getFullYear()}-05-17`;
+                console.log('Special May 17 clicked with date:', may17Date);
+                
+                // Create a custom event object with the correct date
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may17Date;
                         }
                     }
                 };
