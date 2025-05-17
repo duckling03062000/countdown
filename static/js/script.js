@@ -993,10 +993,10 @@ function getDailyContent(dateStr) {
                 <div class="card-body p-4">
                 
                     <div class="message-content" style="font-family: 'Georgia', serif; line-height: 1.7; color: #3a3a3a; background-color: #fffaf0; padding: 25px; border-radius: 10px; border-left: 4px solid #d63384;">
-                        <p>Lately, I love the hours I am with you online. Those are the best minutes of my day. You brighten up my day! </p> 
+                        <p>Lately, I like the hours I am with you online. Those are the best minutes of my day. You brighten up my day! </p> 
                         <p> It takes a lot of courage to step into this(I know for you too). And you make it easy and welcoming. I appreciate all the efforts you put in, given that this is new for you. I know a few things would be overwhelming for you. I am grateful to you for handling it with such care.</p>
 
-                        <p>I appreciate you being there, more than I can write here in these lines. I daydream about the time when we would meet for the first time. It seems like a distant dream, to think about the times when we would be in the same city and get to spend more time with each other more often. Well, it doesn't matter anyways.</p>
+                        <p>I appreciate you being there, more than I can write here in these lines.</p>
 
                         <p>I cannot wait for what the future holds for us. I want to know how your mind will think about me, when you get to know me well. I want to know which part of me will annoy you and which part of me you will love and cherish. I hope that you like more parts of me than the ones you do not appreciate so much.</p>
                         
@@ -1004,7 +1004,7 @@ function getDailyContent(dateStr) {
 
                         <p>It's very easy to be fond of you for anyone. You must know it too. But I want you to know that I love your calm yet super-fun side, your attitude towards things, how you hold a conversation, how you can be super responsible and clumsy at the same time! Also, your voice is lovely :)</p>
 
-                        <p>Whether or not you become a constant part of my life, you have affected me in many ways. That's already a beautiful gift you have given me. Thank you! You are a cutie!</p>
+                        <p>Whether or not you become a constant part of my life, you have affected me in many good ways. That's already a beautiful gift you have given me. Thank you! You are a cutie!</p>
 
                         <p>You do not need to respond to this. All I wanted was this to reach you. Bye.</p>
                     </div>
