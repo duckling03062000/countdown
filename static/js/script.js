@@ -1655,23 +1655,31 @@ function addDayClickHandler(element, date, currentDate) {
             couponBadge.style.transform = 'scale(1) rotate(0)';
         });
         
-        // Make it always interactive
-        element.addEventListener('click', function(event) {
-            // Ensure we use the correct date for May 19
-            const may19Date = `${date.getFullYear()}-05-19`;
-            console.log('Special May 19 clicked with date:', may19Date);
-            
-            // Create a custom event object
-            const customEvent = {
-                currentTarget: {
-                    getAttribute: function() {
-                        return may19Date;
+        // Follow the same rules as other dates (instead of always being interactive)
+        // In staging environment or if date is in past/present, show actual content
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 19
+                const may19Date = `${date.getFullYear()}-05-19`;
+                console.log('Special May 19 clicked with date:', may19Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may19Date;
+                        }
                     }
-                }
-            };
-            
-            openDayModal(customEvent);
-        });
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
         return;
     }
     
