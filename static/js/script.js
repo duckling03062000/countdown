@@ -947,6 +947,149 @@ const dailyContent = {
     '2025-06-21': {
         type: 'celebration',
         content: '<div class="text-center"><h3 class="mb-4">🌞 Happy Summer Solstice! 🌞</h3><p class="lead">Today marks the official start of summer and the longest day of the year!</p><div class="my-4"><img src="https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="img-fluid rounded" alt="Summer Celebration"></div><p>Take time today to enjoy the abundance of sunlight, connect with nature, and celebrate the season of growth and vitality.</p><div class="mt-4 mb-3"><iframe width="100%" height="315" src="https://www.youtube.com/embed/u4XJ9xejgOA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p>Here\'s to a beautiful, joy-filled summer ahead!</p></div>'
+    },
+    
+    // Special handling for May 19 - Special Message
+    '2025-05-19': {
+        type: 'coupon',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="text-center mb-3" style="color: #5a67d8; font-style: italic;">
+                        <i class="fas fa-gift"></i> Your Coupons
+                    </div>
+                    
+                    <div class="coupon-list" style="display: flex; flex-direction: column; gap: 25px; max-width: 500px; margin: 0 auto;">
+                        <!-- Meetup Coupon (Now First) -->
+                        <div class="coupon-container" id="couponMeetup" style="background: linear-gradient(135deg, #f8f9fa 0%, #e2e8f0 100%); border: 2px dashed #38a169; border-radius: 12px; padding: 30px; position: relative;">
+                            <div style="position: absolute; top: -5px; left: -5px; width: 30px; height: 30px; border-top: 5px solid #38a169; border-left: 5px solid #38a169; border-top-left-radius: 8px;"></div>
+                            <div style="position: absolute; top: -5px; right: -5px; width: 30px; height: 30px; border-top: 5px solid #38a169; border-right: 5px solid #38a169; border-top-right-radius: 8px;"></div>
+                            <div style="position: absolute; bottom: -5px; left: -5px; width: 30px; height: 30px; border-bottom: 5px solid #38a169; border-left: 5px solid #38a169; border-bottom-left-radius: 8px;"></div>
+                            <div style="position: absolute; bottom: -5px; right: -5px; width: 30px; height: 30px; border-bottom: 5px solid #38a169; border-right: 5px solid #38a169; border-bottom-right-radius: 8px;"></div>
+                            
+                            <!-- Perforation line on left side -->
+                            <div style="position: absolute; top: 10px; left: 10px; bottom: 10px; width: 2px; display: flex; flex-direction: column; justify-content: space-around; z-index: 2;">
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
+                            </div>
+                            
+                            <!-- Meetup coupon content -->
+                            <div style="text-align: center;">
+                                <!-- Stamp effect -->
+                                <div style="position: absolute; top: 20px; right: 40px; transform: rotate(15deg); opacity: 0.15;">
+                                    <div style="width: 70px; height: 70px; border: 3px solid #38a169; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <div style="font-family: 'Impact', sans-serif; color: #38a169; font-size: 14px; transform: rotate(-15deg);">EXCLUSIVE</div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div style="background-color: white; border-radius: 8px; padding: 25px 20px; margin: 15px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                                    <h3 style="font-family: 'Georgia', serif; color: #276749; font-size: 32px; margin-bottom: 10px;">Come Meet Me! </h3>
+                                    
+                                    <p style="color: #4a5568; font-size: 16px; margin-bottom: 20px;">If ever, in future you feel like meeting me. Use this, I will come to see you :) No questions asked. </p>
+                                    
+                                    <div style="background: linear-gradient(45deg, #48bb78 0%, #276749 100%); color: white; padding: 12px 25px; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 18px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(56, 161, 105, 0.4);">
+                                        VALID ANYTIME
+                                    </div>
+                                    <br>
+                                    <div style="margin-top: 15px; background-color: #f7fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 15px; display: inline-block;">
+                                        <span style="font-family: monospace; font-size: 18px; font-weight: bold; letter-spacing: 2px; color: #4a5568;">AYAMMEET</span>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            
+                            <!-- Decorative elements -->
+                            <div style="position: absolute; top: 20px; left: 20px; font-size: 24px; opacity: 0.15;">🗓️</div>
+                            <div style="position: absolute; bottom: 20px; right: 20px; font-size: 24px; opacity: 0.15;">🌿</div>
+                        </div>
+                        
+                        <!-- Question Coupon (Now Second) -->
+                        <div class="coupon-container" id="couponQuestion" style="background: linear-gradient(135deg, #f8f9fa 0%, #e2e8f0 100%); border: 2px dashed #5a67d8; border-radius: 12px; padding: 30px; position: relative;">
+                            <!-- Decorative elements -->
+                            <div style="position: absolute; top: -5px; left: -5px; width: 30px; height: 30px; border-top: 5px solid #5a67d8; border-left: 5px solid #5a67d8; border-top-left-radius: 8px;"></div>
+                            <div style="position: absolute; top: -5px; right: -5px; width: 30px; height: 30px; border-top: 5px solid #5a67d8; border-right: 5px solid #5a67d8; border-top-right-radius: 8px;"></div>
+                            <div style="position: absolute; bottom: -5px; left: -5px; width: 30px; height: 30px; border-bottom: 5px solid #5a67d8; border-left: 5px solid #5a67d8; border-bottom-left-radius: 8px;"></div>
+                            <div style="position: absolute; bottom: -5px; right: -5px; width: 30px; height: 30px; border-bottom: 5px solid #5a67d8; border-right: 5px solid #5a67d8; border-bottom-right-radius: 8px;"></div>
+                            
+                            <!-- Perforation line on right side (vertical dots) -->
+                            <div style="position: absolute; top: 10px; right: 10px; bottom: 10px; width: 2px; display: flex; flex-direction: column; justify-content: space-around; z-index: 2;">
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
+                            </div>
+                            
+                            <!-- Coupon content -->
+                            <div style="text-align: center;">
+                                <!-- Stamp effect -->
+                                
+                                
+                                
+                                
+                                <div style="background-color: white; border-radius: 8px; padding: 25px 20px; margin: 15px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                                    <h3 style="font-family: 'Georgia', serif; color: #434190; font-size: 32px; margin-bottom: 10px;">Answer me something.</h3>
+                                    
+                                    <p style="color: #4a5568; font-size: 16px; margin-bottom: 20px;">If you need to ask me something and do not know how. Use this. </p>
+                                    
+                                    <div style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 25px; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 18px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);">
+                                        VALID ANYTIME
+                                    </div>
+                                    <br>
+                                    <div style="margin-top: 15px; background-color: #f7fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 15px; display: inline-block;">
+                                        <span style="font-family: monospace; font-size: 18px; font-weight: bold; letter-spacing: 2px; color: #4a5568;">AYAMQ</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Barcode-like element -->
+                                
+                            </div>
+                            
+                            <!-- Decorative elements -->
+                            <div style="position: absolute; top: 20px; left: 20px; font-size: 24px; opacity: 0.15;">❓</div>
+                            <div style="position: absolute; bottom: 20px; right: 20px; font-size: 24px; opacity: 0.15;">❓</div>
+                        </div>
+                        
+                        <!-- Redemption Instructions -->
+                        <div class="coupon-container" id="couponInstructions" style="background: linear-gradient(135deg, #edf2ff 0%, #e6f0ff 100%); border: 2px solid #3182ce; border-radius: 12px; padding: 30px; position: relative;">
+                            <div style="text-align: center; padding: 10px;">
+                                <h3 style="font-family: 'Georgia', serif; color: #2c5282; margin-bottom: 20px;">How to Redeem Coupons</h3>
+                                
+                                <div style="background-color: white; border-radius: 8px; padding: 20px; text-align: left; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                                    <ol style="color: #4a5568; padding-left: 25px; margin-bottom: 0;">
+                                        <li style="margin-bottom: 0;">Share the coupon code and use it, Simple!</li>
+                                    </ol>
+                                </div>
+                                
+                                <div style="font-style: italic; color: #2c5282; margin-bottom: 15px;">
+                                    <i class="fas fa-info-circle"></i> All coupons are valid anytime
+                                </div>
+                                
+                                <div style="font-size: 12px; color: #718096; margin-top: 15px;">
+                                    Terms: One coupon per redemption.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
     }
 };
 
@@ -1015,6 +1158,12 @@ function getDailyContent(dateStr) {
             </div>
         </div>`;
         return specialMessage;
+    }
+    
+    // Special handling for May 19 - Special Message
+    if (dateStr.endsWith('-05-19') || dateStr === '05-19') {
+        console.log('Special handling for May 19 - Special Message');
+        return dailyContent['2025-05-19'].content;
     }
     
     // Special handling for June 3rd - Birthday
@@ -1457,6 +1606,73 @@ function addDayClickHandler(element, date, currentDate) {
             
             openDayModal(customEvent);
         });
+        return;
+    }
+    
+    // Specific handling for May 19th - Special Message
+    if (date.getMonth() === 4 && date.getDate() === 19) {
+        element.classList.add('message-date');
+        element.setAttribute('title', 'Your Coupons');
+        
+        // Add a coupon badge to the day
+        const couponBadge = document.createElement('div');
+        couponBadge.style.position = 'absolute';
+        couponBadge.style.top = '-8px';
+        couponBadge.style.right = '-8px';
+        couponBadge.style.width = '24px';
+        couponBadge.style.height = '24px';
+        couponBadge.style.background = 'rgba(255,255,255,0.9)';
+        couponBadge.style.borderRadius = '50%';
+        couponBadge.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15)';
+        couponBadge.style.display = 'flex';
+        couponBadge.style.alignItems = 'center';
+        couponBadge.style.justifyContent = 'center';
+        couponBadge.style.zIndex = '2';
+        couponBadge.innerHTML = '🎟️';
+        couponBadge.style.fontSize = '12px';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(couponBadge);
+        
+        // Soft styling for the day
+        element.style.background = 'linear-gradient(135deg, #fff0f5 0%, #ffebee 100%)';
+        element.style.color = '#d63384';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(214, 51, 132, 0.15)';
+        
+        // Add hover effects
+        element.style.transition = 'all 0.3s ease';
+        couponBadge.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            couponBadge.style.transform = 'scale(1.2) rotate(10deg)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            couponBadge.style.transform = 'scale(1) rotate(0)';
+        });
+        
+        // Make it always interactive
+        element.addEventListener('click', function(event) {
+            // Ensure we use the correct date for May 19
+            const may19Date = `${date.getFullYear()}-05-19`;
+            console.log('Special May 19 clicked with date:', may19Date);
+            
+            // Create a custom event object
+            const customEvent = {
+                currentTarget: {
+                    getAttribute: function() {
+                        return may19Date;
+                    }
+                }
+            };
+            
+            openDayModal(customEvent);
+        });
+        return;
     }
     
     // In staging environment, all days are clickable to show their content
