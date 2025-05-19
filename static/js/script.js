@@ -961,136 +961,53 @@ const dailyContent = {
                     </div>
                     
                     <div class="coupon-list" style="display: flex; flex-direction: column; gap: 25px; max-width: 500px; margin: 0 auto;">
-                        <!-- Meetup Coupon (Now First) -->
-                        <div class="coupon-container" id="couponMeetup" style="background: linear-gradient(135deg, #f8f9fa 0%, #e2e8f0 100%); border: 2px dashed #38a169; border-radius: 12px; padding: 30px; position: relative;">
-                            <div style="position: absolute; top: -5px; left: -5px; width: 30px; height: 30px; border-top: 5px solid #38a169; border-left: 5px solid #38a169; border-top-left-radius: 8px;"></div>
-                            <div style="position: absolute; top: -5px; right: -5px; width: 30px; height: 30px; border-top: 5px solid #38a169; border-right: 5px solid #38a169; border-top-right-radius: 8px;"></div>
-                            <div style="position: absolute; bottom: -5px; left: -5px; width: 30px; height: 30px; border-bottom: 5px solid #38a169; border-left: 5px solid #38a169; border-bottom-left-radius: 8px;"></div>
-                            <div style="position: absolute; bottom: -5px; right: -5px; width: 30px; height: 30px; border-bottom: 5px solid #38a169; border-right: 5px solid #38a169; border-bottom-right-radius: 8px;"></div>
-                            
-                            <!-- Perforation line on left side -->
-                            <div style="position: absolute; top: 10px; left: 10px; bottom: 10px; width: 2px; display: flex; flex-direction: column; justify-content: space-around; z-index: 2;">
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #38a169; border-radius: 50%;"></div>
-                            </div>
-                            
-                            <!-- Meetup coupon content -->
-                            <div style="text-align: center;">
-                                <!-- Stamp effect -->
-                                <div style="position: absolute; top: 20px; right: 40px; transform: rotate(15deg); opacity: 0.15;">
-                                    <div style="width: 70px; height: 70px; border: 3px solid #38a169; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                        <div style="font-family: 'Impact', sans-serif; color: #38a169; font-size: 14px; transform: rotate(-15deg);">EXCLUSIVE</div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div style="background-color: white; border-radius: 8px; padding: 25px 20px; margin: 15px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                                    <h3 style="font-family: 'Georgia', serif; color: #276749; font-size: 32px; margin-bottom: 10px;">Come Meet Me! </h3>
-                                    
-                                    <p style="color: #4a5568; font-size: 16px; margin-bottom: 20px;">If ever, in future you feel like meeting me. Use this, I will come to see you :) No questions asked. </p>
-                                    
-                                    <div style="background: linear-gradient(45deg, #48bb78 0%, #276749 100%); color: white; padding: 12px 25px; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 18px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(56, 161, 105, 0.4);">
-                                        VALID ANYTIME
-                                    </div>
-                                    <br>
-                                    <div style="margin-top: 15px; background-color: #f7fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 15px; display: inline-block;">
-                                        <span style="font-family: monospace; font-size: 18px; font-weight: bold; letter-spacing: 2px; color: #4a5568;">AYAMMEET</span>
-                                    </div>
-                                </div>
-                                
-                                
-                            </div>
-                            
-                            <!-- Decorative elements -->
-                            <div style="position: absolute; top: 20px; left: 20px; font-size: 24px; opacity: 0.15;">🗓️</div>
-                            <div style="position: absolute; bottom: 20px; right: 20px; font-size: 24px; opacity: 0.15;">🌿</div>
-                        </div>
-                        
-                        <!-- Question Coupon (Now Second) -->
-                        <div class="coupon-container" id="couponQuestion" style="background: linear-gradient(135deg, #f8f9fa 0%, #e2e8f0 100%); border: 2px dashed #5a67d8; border-radius: 12px; padding: 30px; position: relative;">
-                            <!-- Decorative elements -->
-                            <div style="position: absolute; top: -5px; left: -5px; width: 30px; height: 30px; border-top: 5px solid #5a67d8; border-left: 5px solid #5a67d8; border-top-left-radius: 8px;"></div>
-                            <div style="position: absolute; top: -5px; right: -5px; width: 30px; height: 30px; border-top: 5px solid #5a67d8; border-right: 5px solid #5a67d8; border-top-right-radius: 8px;"></div>
-                            <div style="position: absolute; bottom: -5px; left: -5px; width: 30px; height: 30px; border-bottom: 5px solid #5a67d8; border-left: 5px solid #5a67d8; border-bottom-left-radius: 8px;"></div>
-                            <div style="position: absolute; bottom: -5px; right: -5px; width: 30px; height: 30px; border-bottom: 5px solid #5a67d8; border-right: 5px solid #5a67d8; border-bottom-right-radius: 8px;"></div>
-                            
-                            <!-- Perforation line on right side (vertical dots) -->
-                            <div style="position: absolute; top: 10px; right: 10px; bottom: 10px; width: 2px; display: flex; flex-direction: column; justify-content: space-around; z-index: 2;">
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                                <div style="width: 3px; height: 3px; background-color: #5a67d8; border-radius: 50%;"></div>
-                            </div>
-                            
-                            <!-- Coupon content -->
-                            <div style="text-align: center;">
-                                <!-- Stamp effect -->
-                                
-                                
-                                
-                                
-                                <div style="background-color: white; border-radius: 8px; padding: 25px 20px; margin: 15px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                                    <h3 style="font-family: 'Georgia', serif; color: #434190; font-size: 32px; margin-bottom: 10px;">Answer me something.</h3>
-                                    
-                                    <p style="color: #4a5568; font-size: 16px; margin-bottom: 20px;">If you need to ask me something and do not know how. Use this. </p>
-                                    
-                                    <div style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 25px; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 18px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);">
-                                        VALID ANYTIME
-                                    </div>
-                                    <br>
-                                    <div style="margin-top: 15px; background-color: #f7fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 15px; display: inline-block;">
-                                        <span style="font-family: monospace; font-size: 18px; font-weight: bold; letter-spacing: 2px; color: #4a5568;">AYAMQ</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Barcode-like element -->
-                                
-                            </div>
-                            
-                            <!-- Decorative elements -->
-                            <div style="position: absolute; top: 20px; left: 20px; font-size: 24px; opacity: 0.15;">❓</div>
-                            <div style="position: absolute; bottom: 20px; right: 20px; font-size: 24px; opacity: 0.15;">❓</div>
-                        </div>
-                        
-                        <!-- Redemption Instructions -->
-                        <div class="coupon-container" id="couponInstructions" style="background: linear-gradient(135deg, #edf2ff 0%, #e6f0ff 100%); border: 2px solid #3182ce; border-radius: 12px; padding: 30px; position: relative;">
-                            <div style="text-align: center; padding: 10px;">
-                                <h3 style="font-family: 'Georgia', serif; color: #2c5282; margin-bottom: 20px;">How to Redeem Coupons</h3>
-                                
-                                <div style="background-color: white; border-radius: 8px; padding: 20px; text-align: left; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                                    <ol style="color: #4a5568; padding-left: 25px; margin-bottom: 0;">
-                                        <li style="margin-bottom: 0;">Share the coupon code and use it, Simple!</li>
-                                    </ol>
-                                </div>
-                                
-                                <div style="font-style: italic; color: #2c5282; margin-bottom: 15px;">
-                                    <i class="fas fa-info-circle"></i> All coupons are valid anytime
-                                </div>
-                                
-                                <div style="font-size: 12px; color: #718096; margin-top: 15px;">
-                                    Terms: One coupon per redemption.
-                                </div>
-                            </div>
-                        </div>
+                        <!-- ... existing content ... -->
                     </div>
                 </div>
             </div>
         </div>`
-    }
+    },
+    
+    // May 20 - Google Form
+    '2025-05-20': {
+        type: 'form',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #5a67d8; font-weight: 600;">Take this test for Amir Elite Services</h3>
+                    <p class="lead mb-4">Click the button below to open the form:</p>
+                    
+                    <a href="https://forms.gle/DmuGwdjGLZymbYoS7" target="_blank" class="btn btn-lg px-5 py-3" 
+                       style="background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; font-weight: 600; 
+                              border-radius: 50px; border: none; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4); 
+                              transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <span style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <span>Let's know Ayrisha :)</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                        </span>
+                        <span style="position: absolute; top: 0; left: -100%; width: 200%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transform: skewX(-30deg); animation: shine 3s infinite;"></span>
+                    </a>
+                    
+                    <p class="mt-4 text-muted">The form will open in a new tab.</p>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            @keyframes shine {
+                0% { left: -100%; }
+                20% { left: 100%; }
+                100% { left: 100%; }
+            }
+        </style>`
+    },
+    
+    // Other entries
+    // ... existing code ...
 };
 
 // Get content for a specific day
@@ -1164,6 +1081,12 @@ function getDailyContent(dateStr) {
     if (dateStr.endsWith('-05-19') || dateStr === '05-19') {
         console.log('Special handling for May 19 - Special Message');
         return dailyContent['2025-05-19'].content;
+    }
+    
+    // Special handling for May 20 - Google Form
+    if (dateStr.endsWith('-05-20') || dateStr === '05-20') {
+        console.log('Special handling for May 20 - Google Form');
+        return dailyContent['2025-05-20'].content;
     }
     
     // Special handling for June 3rd - Birthday
@@ -1668,6 +1591,81 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return may19Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for May 20th - Google Form
+    if (date.getMonth() === 4 && date.getDate() === 20) {
+        element.classList.add('form-date');
+        element.setAttribute('title', 'Special Google Form');
+        
+        // Add form icon
+        const formIcon = document.createElement('span');
+        formIcon.innerHTML = '📝';
+        formIcon.style.position = 'absolute';
+        formIcon.style.top = '-8px';
+        formIcon.style.right = '-8px';
+        formIcon.style.fontSize = '16px';
+        formIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        formIcon.style.zIndex = '2';
+        formIcon.style.background = 'rgba(255,255,255,0.9)';
+        formIcon.style.borderRadius = '50%';
+        formIcon.style.width = '25px';
+        formIcon.style.height = '25px';
+        formIcon.style.display = 'flex';
+        formIcon.style.alignItems = 'center';
+        formIcon.style.justifyContent = 'center';
+        formIcon.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15)';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(formIcon);
+        
+        // Add styling for the date element
+        element.style.background = 'linear-gradient(135deg, #ebf8ff 0%, #d6f0ff 100%)';
+        element.style.color = '#3182ce';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(49, 130, 206, 0.2)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        formIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            formIcon.style.transform = 'scale(1.2)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            formIcon.style.transform = 'scale(1)';
+        });
+        
+        // Follow the same rules as other dates
+        // In staging environment or if date is in past/present, show actual content
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 20
+                const may20Date = `${date.getFullYear()}-05-20`;
+                console.log('Special May 20 clicked with date:', may20Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may20Date;
                         }
                     }
                 };
