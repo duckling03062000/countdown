@@ -1042,27 +1042,8 @@ const dailyContent = {
         </style>`
     },
     
-    // May 21 - One Direction Spotify Song
+    // May 21 - Now with the song that was previously on May 22nd
     '2025-05-21': {
-        type: 'song',
-        content: `
-        <div class="text-center mb-4 fade-in">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-4">
-                    <h3 class="mb-4" style="color: #1DB954; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; font-weight: 600;">Knowing you has been like this One Direction song</h3>
-                    
-                    <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5G2c6FsfTzgYUzageCmfXY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    </div>
-                   
-                    <p class="mt-4" style="font-style: italic; color: #718096;">Please listen closely</p>
-                </div>
-            </div>
-        </div>`
-    },
-    
-    // May 22 - Second Spotify Song
-    '2025-05-22': {
         type: 'song',
         content: `
         <div class="text-center mb-4 fade-in">
@@ -1073,8 +1054,27 @@ const dailyContent = {
                     <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/37R0bQOQj5a7DOqh1TGzvB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
+                   
+                    <p class="mt-4" style="font-style: italic; color: #718096;"> :)</p>
+                </div>
+            </div>
+        </div>`
+    },
+    
+    // May 22 - Now with the song that was previously on May 21st
+    '2025-05-22': {
+        type: 'song',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #1DB954; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; font-weight: 600;">Knowing you has been like this One Direction song</h3>
                     
-                    <p class="mt-4" style="font-style: italic; color: #718096;">  I hope you like it :D</p>
+                    <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5G2c6FsfTzgYUzageCmfXY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    
+                    
                 </div>
             </div>
         </div>`
