@@ -1006,6 +1006,44 @@ const dailyContent = {
         </style>`
     },
     
+    // May 21 - One Direction Spotify Song
+    '2025-05-21': {
+        type: 'song',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #1DB954; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; font-weight: 600;">Knowing you has been like this One Direction song</h3>
+                    
+                    <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5G2c6FsfTzgYUzageCmfXY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                   
+                    <p class="mt-4" style="font-style: italic; color: #718096;">Please listen closely</p>
+                </div>
+            </div>
+        </div>`
+    },
+    
+    // May 22 - Second Spotify Song
+    '2025-05-22': {
+        type: 'song',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #1DB954; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; font-weight: 600;">I would want to be there for you :D</h3>
+                    
+                    <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/37R0bQOQj5a7DOqh1TGzvB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    
+                    <p class="mt-4" style="font-style: italic; color: #718096;">  I hope you like it :D</p>
+                </div>
+            </div>
+        </div>`
+    },
+    
     // Other entries
     // ... existing code ...
 };
@@ -1087,6 +1125,18 @@ function getDailyContent(dateStr) {
     if (dateStr.endsWith('-05-20') || dateStr === '05-20') {
         console.log('Special handling for May 20 - Google Form');
         return dailyContent['2025-05-20'].content;
+    }
+    
+    // Special handling for May 21 - One Direction Spotify Song
+    if (dateStr.endsWith('-05-21') || dateStr === '05-21') {
+        console.log('Special handling for May 21 - One Direction Spotify Song');
+        return dailyContent['2025-05-21'].content;
+    }
+    
+    // Special handling for May 22 - Second Spotify Song
+    if (dateStr.endsWith('-05-22') || dateStr === '05-22') {
+        console.log('Special handling for May 22 - Second Spotify Song');
+        return dailyContent['2025-05-22'].content;
     }
     
     // Special handling for June 3rd - Birthday
@@ -1666,6 +1716,156 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return may20Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for May 21st - One Direction Spotify Song
+    if (date.getMonth() === 4 && date.getDate() === 21) {
+        element.classList.add('spotify-date');
+        element.setAttribute('title', 'Special song for today');
+        
+        // Add Spotify icon
+        const spotifyIcon = document.createElement('span');
+        spotifyIcon.innerHTML = '🎵';
+        spotifyIcon.style.position = 'absolute';
+        spotifyIcon.style.top = '-8px';
+        spotifyIcon.style.right = '-8px';
+        spotifyIcon.style.fontSize = '16px';
+        spotifyIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        spotifyIcon.style.zIndex = '2';
+        spotifyIcon.style.background = 'rgba(255,255,255,0.9)';
+        spotifyIcon.style.borderRadius = '50%';
+        spotifyIcon.style.width = '25px';
+        spotifyIcon.style.height = '25px';
+        spotifyIcon.style.display = 'flex';
+        spotifyIcon.style.alignItems = 'center';
+        spotifyIcon.style.justifyContent = 'center';
+        spotifyIcon.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15)';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(spotifyIcon);
+        
+        // Add styling for the date element - Spotify green gradient
+        element.style.background = 'linear-gradient(135deg, #1DB954 0%, #1ed760 100%)';
+        element.style.color = 'white';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(29, 185, 84, 0.3)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        spotifyIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            spotifyIcon.style.transform = 'scale(1.2) rotate(15deg)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            spotifyIcon.style.transform = 'scale(1) rotate(0)';
+        });
+        
+        // Follow the same rules as other dates
+        // In staging environment or if date is in past/present, show actual content
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 21
+                const may21Date = `${date.getFullYear()}-05-21`;
+                console.log('Special May 21 clicked with date:', may21Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may21Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for May 22nd - Second Spotify Song
+    if (date.getMonth() === 4 && date.getDate() === 22) {
+        element.classList.add('spotify-date-alt');
+        element.setAttribute('title', 'Special song just for you');
+        
+        // Add Spotify icon with slight variation
+        const spotifyIcon = document.createElement('span');
+        spotifyIcon.innerHTML = '🎵';
+        spotifyIcon.style.position = 'absolute';
+        spotifyIcon.style.top = '-8px';
+        spotifyIcon.style.right = '-8px';
+        spotifyIcon.style.fontSize = '16px';
+        spotifyIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        spotifyIcon.style.zIndex = '2';
+        spotifyIcon.style.background = 'rgba(255,255,255,0.9)';
+        spotifyIcon.style.borderRadius = '50%';
+        spotifyIcon.style.width = '25px';
+        spotifyIcon.style.height = '25px';
+        spotifyIcon.style.display = 'flex';
+        spotifyIcon.style.alignItems = 'center';
+        spotifyIcon.style.justifyContent = 'center';
+        spotifyIcon.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15)';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(spotifyIcon);
+        
+        // Add styling for the date element - Purple gradient (different from May 21)
+        element.style.background = 'linear-gradient(135deg, #6A0DAD 0%, #8A2BE2 100%)';
+        element.style.color = 'white';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(106, 13, 173, 0.3)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        spotifyIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            spotifyIcon.style.transform = 'scale(1.2) rotate(-15deg)'; // Different rotation
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            spotifyIcon.style.transform = 'scale(1) rotate(0)';
+        });
+        
+        // Follow the same rules as other dates
+        // In staging environment or if date is in past/present, show actual content
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 22
+                const may22Date = `${date.getFullYear()}-05-22`;
+                console.log('Special May 22 clicked with date:', may22Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may22Date;
                         }
                     }
                 };
