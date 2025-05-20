@@ -956,13 +956,49 @@ const dailyContent = {
         <div class="text-center mb-4 fade-in">
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-4">
-                    <div class="text-center mb-3" style="color: #5a67d8; font-style: italic;">
-                        <i class="fas fa-gift"></i> Your Coupons
+                    <div class="text-center mb-4" style="color: #d63384; font-style: italic; font-size: 1.5rem; font-weight: 600;">
+                        <i class="fas fa-gift"></i> Your Special Coupons
                     </div>
                     
                     <div class="coupon-list" style="display: flex; flex-direction: column; gap: 25px; max-width: 500px; margin: 0 auto;">
-                        <!-- ... existing content ... -->
+                        <!-- Coupon 1 -->
+                        <div class="coupon" style="border: 2px dashed #d63384; border-radius: 12px; padding: 20px; position: relative; background: linear-gradient(135deg, #fff0f7 0%, #ffebf4 100%); box-shadow: 0 4px 15px rgba(214, 51, 132, 0.15);">
+                            <div style="position: absolute; top: -10px; right: -10px; background: #d63384; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">1</div>
+                            <h4 style="color: #d63384; margin-bottom: 10px; font-weight: 600;">Come Meet Me</h4>
+                            <p style="margin-bottom: 5px;">Valid for one in-person meeting. I'll make time for you.</p>
+                            <p style="font-size: 0.85rem; font-style: italic; color: #86577d; margin-top: 15px;">No expiration date. Redeem when you're ready.</p>
+                            <div style="border-top: 1px dashed #d63384; margin-top: 15px; padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">CODE: AYAMMEET</span>
+                                <span style="font-style: italic;">👋</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Coupon 2 -->
+                        <div class="coupon" style="border: 2px dashed #4361ee; border-radius: 12px; padding: 20px; position: relative; background: linear-gradient(135deg, #ebf4ff 0%, #e6f0ff 100%); box-shadow: 0 4px 15px rgba(67, 97, 238, 0.15);">
+                            <div style="position: absolute; top: -10px; right: -10px; background: #4361ee; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">2</div>
+                            <h4 style="color: #4361ee; margin-bottom: 10px; font-weight: 600;">Answer Me Something</h4>
+                            <p style="margin-bottom: 5px;">Redeem for one honest answer to any question you want to ask.</p>
+                            <p style="font-size: 0.85rem; font-style: italic; color: #3a56b4; margin-top: 15px;">No judgment, just honesty.</p>
+                            <div style="border-top: 1px dashed #4361ee; margin-top: 15px; padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">CODE: AYAMANS</span>
+                                <span style="font-style: italic;">🔍</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Coupon 3 -->
+                        <div class="coupon" style="border: 2px dashed #38b000; border-radius: 12px; padding: 20px; position: relative; background: linear-gradient(135deg, #f0fff4 0%, #e8fae9 100%); box-shadow: 0 4px 15px rgba(56, 176, 0, 0.15);">
+                            <div style="position: absolute; top: -10px; right: -10px; background: #38b000; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">3</div>
+                            <h4 style="color: #38b000; margin-bottom: 10px; font-weight: 600;">Cheer Up Call</h4>
+                            <p style="margin-bottom: 5px;">Instant mood booster when you're feeling down. Redeem for one call that will make you smile.</p>
+                            <p style="font-size: 0.85rem; font-style: italic; color: #2d7900; margin-top: 15px;">We guarantee smiles or your coupon back!</p>
+                            <div style="border-top: 1px dashed #38b000; margin-top: 15px; padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">CODE: AYAMCALL</span>
+                                <span style="font-style: italic;">😊</span>
+                            </div>g
+                        </div>
                     </div>
+                    
+                    <p class="mt-4" style="font-style: italic; color: #6b7280;">Cut along the dotted lines and redeem whenever you want!</p>
                 </div>
             </div>
         </div>`
