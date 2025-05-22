@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
         targetDate.setFullYear(currentYear + 1);
     }
     
+    // Check if today is May 23rd and show special message
+    checkForSpecialDates();
+    
     // Update countdown timer
     function updateCountdown() {
         const currentDate = new Date();
@@ -286,6 +289,28 @@ function setupModal() {
     });
 }
 
+// Function to check for special dates that should trigger automatic content
+function checkForSpecialDates() {
+    const today = new Date();
+    const month = today.getMonth(); // 0-indexed (4 = May)
+    const day = today.getDate();
+    
+    // Check if today is May 23rd
+    if (month === 4 && day === 23) {
+        // Create modal content
+        const modalContent = document.getElementById('modalContent');
+        const modalTitle = document.getElementById('dayModalLabel');
+        
+        // Set title and content
+        modalTitle.textContent = 'Special Message for Today';
+        modalContent.innerHTML = dailyContent['2024-05-23'].content;
+        
+        // Show the modal automatically
+        const modal = new bootstrap.Modal(document.getElementById('dayModal'));
+        modal.show();
+    }
+}
+
 // Daily content data
 const dailyContent = {
     // June 2024 example content
@@ -337,6 +362,12 @@ const dailyContent = {
     '2024-06-21': {
         type: 'celebration',
         content: '<div class="text-center"><h3 class="mb-4">🌞 Happy Summer Solstice! 🌞</h3><p class="lead">Today marks the official start of summer and the longest day of the year!</p><div class="my-4"><img src="https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="img-fluid rounded" alt="Summer Celebration"></div><p>Take time today to enjoy the abundance of sunlight, connect with nature, and celebrate the season of growth and vitality.</p><div class="mt-4 mb-3"><iframe width="100%" height="315" src="https://www.youtube.com/embed/u4XJ9xejgOA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p>Here\'s to a beautiful, joy-filled summer ahead!</p></div>'
+    },
+    
+    // May 23rd - Virtual Hugs
+    '2024-05-23': {
+        type: 'note',
+        content: '<div class="text-center"><h3 class="mb-4">💖 Sending Virtual Hugs Your Way! 💖</h3><div class="my-4"><img src="static/images/hug.jpeg" class="img-fluid rounded" alt="Virtual Hug"></div><p class="lead">Just wanted to let you know that I\'m thinking of you today!</p><p>Hope this virtual hug brightens your day a little bit.</p></div>'
     }
 };
 
@@ -381,6 +412,48 @@ function addDayClickHandler(element, date, currentDate) {
     // In staging environment, all days are clickable
     if (CONFIG.STAGING) {
         element.addEventListener('click', openDayModal);
+        return;
+    }
+    
+    // Special handling for May 23rd - Virtual Hugs
+    if (date.getMonth() === 4 && date.getDate() === 23) {
+        // Add hug icon indicator
+        const hugIcon = document.createElement('span');
+        hugIcon.innerHTML = '🤗';
+        hugIcon.style.position = 'absolute';
+        hugIcon.style.top = '-6px';
+        hugIcon.style.right = '-6px';
+        hugIcon.style.fontSize = '14px';
+        hugIcon.style.background = 'rgba(255,255,255,0.9)';
+        hugIcon.style.borderRadius = '50%';
+        hugIcon.style.width = '20px';
+        hugIcon.style.height = '20px';
+        hugIcon.style.display = 'flex';
+        hugIcon.style.alignItems = 'center';
+        hugIcon.style.justifyContent = 'center';
+        hugIcon.style.boxShadow = '0 2px 4px rgba(0,0,0,0.15)';
+        hugIcon.style.zIndex = '2';
+        
+        // Add warm styling for the date
+        element.style.background = 'linear-gradient(135deg, #FF9A8B 0%, #FF6A88 100%)';
+        element.style.color = 'white';
+        element.style.fontWeight = '600';
+        element.style.position = 'relative';
+        element.style.boxShadow = '0 4px 8px rgba(255, 106, 136, 0.3)';
+        element.appendChild(hugIcon);
+        
+        // Add a tooltip
+        element.setAttribute('title', 'Sending virtual hugs your way!');
+        
+        // Add click event to show content for current or past dates
+        if (date <= currentDate) {
+            element.addEventListener('click', openDayModal);
+        } else {
+            // For future dates, show the future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
         return;
     }
     

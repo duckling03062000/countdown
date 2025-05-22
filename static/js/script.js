@@ -1061,19 +1061,37 @@ const dailyContent = {
         </div>`
     },
     
-    // May 22 - Now with the song that was previously on May 21st
+    // May 22 - Quote
     '2025-05-22': {
-        type: 'song',
+        type: 'note',
         content: `
         <div class="text-center mb-4 fade-in">
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-4">
-                    <h3 class="mb-4" style="color: #1DB954; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; font-weight: 600;">Knowing you has been like this One Direction song</h3>
-                    
-                    <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5G2c6FsfTzgYUzageCmfXY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <div class="quote-container">
+                        <blockquote class="blockquote">
+                            <p>"Go confidently in the direction of your dreams. Live the life you've imagined."</p>
+                        </blockquote>
+                        <footer class="blockquote-footer">Henry David Thoreau</footer>
                     </div>
-                    
+                    <p class="mt-3">One month until summer begins! What dreams will you pursue?</p>
+                </div>
+            </div>
+        </div>`
+    },
+    
+    // May 23 - Virtual Hugs
+    '2025-05-23': {
+        type: 'note',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-4">💖 Sending Virtual Hugs Your Way! 💖</h3>
+                    <div class="my-4">
+                        <img src="static/images/hug.jpeg" class="img-fluid rounded" alt="Virtual Hug">
+                    </div>
+                    <p class="lead"> I was thinking of you today...</p>
                     
                 </div>
             </div>
@@ -1173,6 +1191,12 @@ function getDailyContent(dateStr) {
     if (dateStr.endsWith('-05-22') || dateStr === '05-22') {
         console.log('Special handling for May 22 - Second Spotify Song');
         return dailyContent['2025-05-22'].content;
+    }
+    
+    // Special handling for May 23rd - Virtual Hugs
+    if (dateStr.endsWith('-05-23') || dateStr === '05-23') {
+        console.log('Special handling for May 23rd - Virtual Hugs');
+        return dailyContent['2025-05-23'].content;
     }
     
     // Special handling for June 3rd - Birthday
@@ -1902,6 +1926,81 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return may22Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for May 23rd - Virtual Hugs
+    if (date.getMonth() === 4 && date.getDate() === 23) {
+        element.classList.add('hug-date');
+        element.setAttribute('title', 'Sending virtual hugs your way!');
+        
+        // Add hug icon
+        const hugIcon = document.createElement('span');
+        hugIcon.innerHTML = '🤗';
+        hugIcon.style.position = 'absolute';
+        hugIcon.style.top = '-8px';
+        hugIcon.style.right = '-8px';
+        hugIcon.style.fontSize = '16px';
+        hugIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        hugIcon.style.zIndex = '2';
+        hugIcon.style.background = 'rgba(255,255,255,0.9)';
+        hugIcon.style.borderRadius = '50%';
+        hugIcon.style.width = '25px';
+        hugIcon.style.height = '25px';
+        hugIcon.style.display = 'flex';
+        hugIcon.style.alignItems = 'center';
+        hugIcon.style.justifyContent = 'center';
+        hugIcon.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15)';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(hugIcon);
+        
+        // Add styling for the date element - Warm pink gradient
+        element.style.background = 'linear-gradient(135deg, #FF9A8B 0%, #FF6A88 100%)';
+        element.style.color = 'white';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(255, 106, 136, 0.3)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        hugIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            hugIcon.style.transform = 'scale(1.2) rotate(5deg)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            hugIcon.style.transform = 'scale(1) rotate(0)';
+        });
+        
+        // Follow the same rules as other dates
+        // In staging environment or if date is in past/present, show actual content
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 23
+                const may23Date = `${date.getFullYear()}-05-23`;
+                console.log('Special May 23 clicked with date:', may23Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may23Date;
                         }
                     }
                 };
