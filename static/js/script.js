@@ -1055,7 +1055,7 @@ const dailyContent = {
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/37R0bQOQj5a7DOqh1TGzvB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
                    
-                    <p class="mt-4" style="font-style: italic; color: #718096;"> :)</p>
+                    
                 </div>
             </div>
         </div>`
@@ -1068,13 +1068,13 @@ const dailyContent = {
         <div class="text-center mb-4 fade-in">
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-4">
-                    <div class="quote-container">
-                        <blockquote class="blockquote">
-                            <p>"Go confidently in the direction of your dreams. Live the life you've imagined."</p>
-                        </blockquote>
-                        <footer class="blockquote-footer">Henry David Thoreau</footer>
+                    <h3 class="mb-4" style="color: #1DB954; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); font-family: 'Poppins', sans-serif; font-weight: 600;">Knowing you has been like this one direction song :D</h3>
+                    
+                    <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5G2c6FsfTzgYUzageCmfXY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
-                    <p class="mt-3">One month until summer begins! What dreams will you pursue?</p>
+                   
+                    
                 </div>
             </div>
         </div>`
@@ -1095,6 +1095,48 @@ const dailyContent = {
                     
                 </div>
             </div>
+        </div>`
+    },
+    
+    // May 24 - Daily Activities
+    '2025-05-24': {
+        type: 'interactive',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            
+            <div class="row">
+                <!-- Game -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-lg overflow-hidden">
+                        <img src="static/images/game.jpeg" class="card-img-top" alt="Game">
+                    </div>
+                </div>
+                
+                <!-- Lunch -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-lg overflow-hidden">
+                        <img src="static/images/lunch.jpeg" class="card-img-top" alt="Lunch">
+                    </div>
+                </div>
+                
+                <!-- Music -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-lg overflow-hidden">
+                        <img src="static/images/music.jpeg" class="card-img-top" alt="Music">
+                    </div>
+                </div>
+                
+                <!-- Work -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-lg overflow-hidden">
+                        <img src="static/images/work.jpeg" class="card-img-top" alt="Work">
+                    </div>
+                </div>
+            </div>
+            
+            <p class="mt-3 lead">I go through my day, doing stuff...<br>
+You're always there, like a steady feeling...
+</p>
         </div>`
     },
     
@@ -1197,6 +1239,12 @@ function getDailyContent(dateStr) {
     if (dateStr.endsWith('-05-23') || dateStr === '05-23') {
         console.log('Special handling for May 23rd - Virtual Hugs');
         return dailyContent['2025-05-23'].content;
+    }
+    
+    // Special handling for May 24th - Daily Activities
+    if (dateStr.endsWith('-05-24') || dateStr === '05-24') {
+        console.log('Special handling for May 24th - Daily Activities');
+        return dailyContent['2025-05-24'].content;
     }
     
     // Special handling for June 3rd - Birthday
@@ -2001,6 +2049,82 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return may23Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for May 24th - Daily Activities
+    if (date.getMonth() === 4 && date.getDate() === 24) {
+        element.classList.add('activity-date');
+        element.setAttribute('title', 'My Daily Schedule');
+        
+        // Add activity icon with cuter style
+        const activityIcon = document.createElement('span');
+        activityIcon.innerHTML = '🧸'; // Changed to teddy bear emoji for cuteness
+        activityIcon.style.position = 'absolute';
+        activityIcon.style.top = '-8px';
+        activityIcon.style.right = '-8px';
+        activityIcon.style.fontSize = '18px'; // Slightly larger
+        activityIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        activityIcon.style.zIndex = '2';
+        activityIcon.style.background = 'rgba(255,255,255,0.95)'; // Slightly more opaque background
+        activityIcon.style.borderRadius = '50%';
+        activityIcon.style.width = '28px'; // Slightly larger
+        activityIcon.style.height = '28px'; // Slightly larger
+        activityIcon.style.display = 'flex';
+        activityIcon.style.alignItems = 'center';
+        activityIcon.style.justifyContent = 'center';
+        activityIcon.style.boxShadow = '0 3px 6px rgba(0,0,0,0.15), inset 0 1px 3px rgba(255,255,255,0.5)'; // Enhanced shadow
+        activityIcon.style.border = '1px solid rgba(255,192,203,0.3)'; // Light pink border
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(activityIcon);
+        
+        // Add styling for the date element - Cuter gradient with pastel colors
+        element.style.background = 'linear-gradient(135deg, #FFB6C1 0%, #FFDAB9 100%)'; // Soft pink to peach
+        element.style.color = 'white';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(255, 182, 193, 0.4)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        activityIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            activityIcon.style.transform = 'scale(1.3) rotate(10deg)'; // More playful animation
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            activityIcon.style.transform = 'scale(1) rotate(0deg)';
+        });
+        
+        // Follow the same rules as other dates
+        // In staging environment or if date is in past/present, show actual content
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 24
+                const may24Date = `${date.getFullYear()}-05-24`;
+                console.log('Special May 24 clicked with date:', may24Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may24Date;
                         }
                     }
                 };
