@@ -1140,6 +1140,22 @@ You're always there, like a steady feeling...
         </div>`
     },
     
+    // May 25 - Bouquet
+    '2025-05-25': {
+        type: 'message',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <p class="lead mb-4">Out of ideas, but here ! Flowers for you :)</p>
+                    <div class="image-container mb-3">
+                        <img src="static/images/bouquet.jpeg" class="img-fluid rounded" alt="Bouquet of flowers" style="max-height: 400px;">
+                    </div>
+                </div>
+            </div>
+        </div>`
+    },
+    
     // Other entries
     // ... existing code ...
 };
@@ -1245,6 +1261,12 @@ function getDailyContent(dateStr) {
     if (dateStr.endsWith('-05-24') || dateStr === '05-24') {
         console.log('Special handling for May 24th - Daily Activities');
         return dailyContent['2025-05-24'].content;
+    }
+    
+    // Special handling for May 25th - Bouquet
+    if (dateStr.endsWith('-05-25') || dateStr === '05-25') {
+        console.log('Special handling for May 25th - Bouquet');
+        return dailyContent['2025-05-25'].content;
     }
     
     // Special handling for June 3rd - Birthday
@@ -2125,6 +2147,81 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return may24Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for May 25th - Bouquet
+    if (date.getMonth() === 4 && date.getDate() === 25) {
+        element.classList.add('bouquet-date');
+        element.setAttribute('title', 'Special flowers for you');
+        
+        // Add flower icon
+        const flowerIcon = document.createElement('span');
+        flowerIcon.innerHTML = '💐'; // Bouquet emoji
+        flowerIcon.style.position = 'absolute';
+        flowerIcon.style.top = '-8px';
+        flowerIcon.style.right = '-8px';
+        flowerIcon.style.fontSize = '18px';
+        flowerIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        flowerIcon.style.zIndex = '2';
+        flowerIcon.style.background = 'rgba(255,255,255,0.95)';
+        flowerIcon.style.borderRadius = '50%';
+        flowerIcon.style.width = '28px';
+        flowerIcon.style.height = '28px';
+        flowerIcon.style.display = 'flex';
+        flowerIcon.style.alignItems = 'center';
+        flowerIcon.style.justifyContent = 'center';
+        flowerIcon.style.boxShadow = '0 3px 6px rgba(0,0,0,0.15), inset 0 1px 3px rgba(255,255,255,0.5)';
+        flowerIcon.style.border = '1px solid rgba(255,182,193,0.3)';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(flowerIcon);
+        
+        // Add styling for the date element - Floral gradient
+        element.style.background = 'linear-gradient(135deg, #F8BBD0 0%, #E1BEE7 100%)'; // Pink to light purple
+        element.style.color = 'white';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(248, 187, 208, 0.4)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        flowerIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            flowerIcon.style.transform = 'scale(1.3) rotate(10deg)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            flowerIcon.style.transform = 'scale(1) rotate(0deg)';
+        });
+        
+        // Follow the same rules as other dates
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 25
+                const may25Date = `${date.getFullYear()}-05-25`;
+                console.log('Special May 25 clicked with date:', may25Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may25Date;
                         }
                     }
                 };
