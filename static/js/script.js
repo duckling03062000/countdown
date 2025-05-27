@@ -1182,7 +1182,7 @@ You're always there, like a steady feeling...
                             <div style="position: absolute; bottom: -10px; left: -10px; font-size: 24px;">💫</div>
                             <div style="position: absolute; bottom: -10px; right: -10px; font-size: 24px;">🌸</div>
                             
-                           
+                            
                             
                             <!-- The image with inner shadow and rounded corners -->
                             <img src="static/images/aboutYouSS.png" alt="About You" class="img-fluid" style="border-radius: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); padding: 3px; background: white; max-width: 100%; height: auto; border: 1px dashed #ffb6c1;">
@@ -1235,152 +1235,102 @@ You're always there, like a steady feeling...
                 }
             }, 500);
         </script>`
+    },
+    
+    // May 27 - Sparkles image with cute styling
+    '2025-05-27': {
+        type: 'special',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #9c27b0; font-weight: 600;">You today? (cute though)</h3>
+                    
+                    <div class="text-center mb-4">
+                        <div style="position: relative; max-width: 90%; margin: 0 auto; padding: 15px; background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(156, 39, 176, 0.2); border: 3px solid #ce93d8;">
+                            <!-- Corner decorations -->
+                            <div style="position: absolute; top: -10px; left: -10px; font-size: 24px;">✨</div>
+                            <div style="position: absolute; top: -10px; right: -10px; font-size: 24px;">🌟</div>
+                            <div style="position: absolute; bottom: -10px; left: -10px; font-size: 24px;">⭐</div>
+                            <div style="position: absolute; bottom: -10px; right: -10px; font-size: 24px;">✨</div>
+                            
+                            <!-- The image with inner shadow and rounded corners -->
+                            <img src="static/images/sparkles.jpeg" alt="Sparkles" class="img-fluid" style="border-radius: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); padding: 3px; background: white; max-width: 100%; height: auto; border: 1px dashed #ce93d8;">
+                            
+                            <!-- Small decorative sparkles around image -->
+                            <div style="position: absolute; top: 40px; left: 15px; font-size: 16px; transform: rotate(-20deg); animation: float 3s infinite ease-in-out;">✨</div>
+                            <div style="position: absolute; top: 30%; right: 15px; font-size: 16px; transform: rotate(15deg); animation: float 4s infinite ease-in-out;">✨</div>
+                            <div style="position: absolute; bottom: 40px; left: 20px; font-size: 16px; transform: rotate(-10deg); animation: float 2.5s infinite ease-in-out;">✨</div>
+                            <div style="position: absolute; bottom: 60px; right: 20px; font-size: 16px; transform: rotate(20deg); animation: float 3.5s infinite ease-in-out;">✨</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
     },
     
     // Make sure it works for the current year as well
-    [(new Date().getFullYear()) + '-05-26']: {
+    [(new Date().getFullYear()) + '-05-27']: {
         type: 'special',
         content: `
         <div class="text-center mb-4 fade-in">
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-4">
-                    <h3 class="mb-4" style="color: #d63384; font-weight: 600;">Me not in train, but in movie theatre yesterday :)</h3>
+                    <h3 class="mb-4" style="color: #9c27b0; font-weight: 600;">You today? (cute though)</h3>
                     
                     <div class="text-center mb-4">
-                        <div style="position: relative; max-width: 90%; margin: 0 auto; padding: 15px; background: linear-gradient(135deg, #fff8fa 0%, #ffeef8 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(214, 51, 132, 0.2); border: 3px solid #ffd6e7;">
+                        <div style="position: relative; max-width: 90%; margin: 0 auto; padding: 15px; background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(156, 39, 176, 0.2); border: 3px solid #ce93d8;">
                             <!-- Corner decorations -->
-                            <div style="position: absolute; top: -10px; left: -10px; font-size: 24px;">🌸</div>
-                            <div style="position: absolute; top: -10px; right: -10px; font-size: 24px;">✨</div>
-                            <div style="position: absolute; bottom: -10px; left: -10px; font-size: 24px;">💫</div>
-                            <div style="position: absolute; bottom: -10px; right: -10px; font-size: 24px;">🌸</div>
-                            
+                            <div style="position: absolute; top: -10px; left: -10px; font-size: 24px;">✨</div>
+                            <div style="position: absolute; top: -10px; right: -10px; font-size: 24px;">🌟</div>
+                            <div style="position: absolute; bottom: -10px; left: -10px; font-size: 24px;">⭐</div>
+                            <div style="position: absolute; bottom: -10px; right: -10px; font-size: 24px;">✨</div>
                             
                             <!-- The image with inner shadow and rounded corners -->
-                            <img src="static/images/aboutYouSS.png" alt="About You" class="img-fluid" style="border-radius: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); padding: 3px; background: white; max-width: 100%; height: auto; border: 1px dashed #ffb6c1;">
+                            <img src="static/images/sparkles.jpeg" alt="Sparkles" class="img-fluid" style="border-radius: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); padding: 3px; background: white; max-width: 100%; height: auto; border: 1px dashed #ce93d8;">
                             
-                            <!-- Small decorative hearts around image -->
-                            <div style="position: absolute; top: 40px; left: 15px; font-size: 16px; transform: rotate(-20deg); animation: float 3s infinite ease-in-out;">❤️</div>
-                            <div style="position: absolute; top: 30%; right: 15px; font-size: 16px; transform: rotate(15deg); animation: float 4s infinite ease-in-out;">💕</div>
-                            <div style="position: absolute; bottom: 40px; left: 20px; font-size: 16px; transform: rotate(-10deg); animation: float 2.5s infinite ease-in-out;">💖</div>
-                            <div style="position: absolute; bottom: 60px; right: 20px; font-size: 16px; transform: rotate(20deg); animation: float 3.5s infinite ease-in-out;">💓</div>
-                        </div>
-                    </div>
-                    
-                    <style>
-                        @keyframes float {
-                            0% { transform: translateY(0) rotate(-10deg); }
-                            50% { transform: translateY(-8px) rotate(5deg); }
-                            100% { transform: translateY(0) rotate(-10deg); }
-                        }
-                    </style>
-                    
-                    <div class="mt-4">
-                        <div style="background: linear-gradient(135deg, #fff0f7 0%, #ffebf4 100%); border-radius: 20px; padding: 15px; box-shadow: 0 6px 15px rgba(214, 51, 132, 0.15); position: relative; border: 2px solid #ffd6e7;">
-                            <!-- Decorative elements -->
-                            <div style="position: absolute; top: -12px; left: 20px; background: white; padding: 0 10px; border-radius: 15px; box-shadow: 0 3px 5px rgba(0,0,0,0.1);">
-                                <span style="font-size: 14px; color: #d63384; font-weight: 600;">♫ About You ♫</span>
-                            </div>
-                            <div style="position: absolute; top: 10px; right: 15px; font-size: 18px;">🎵</div>
-                            <div style="position: absolute; bottom: 8px; left: 15px; font-size: 16px;">💖</div>
-                            
-                            <!-- Audio player -->
-                            <audio id="aboutYouAudio" src="static/audio/aboutYou.mp3" controls class="w-100 mt-2" style="border-radius: 30px; height: 40px; margin-top: 10px;"></audio>
-                            
-                            <!-- Animated heart -->
-                            <div style="position: absolute; bottom: 8px; right: 15px; font-size: 16px; animation: heartbeat 1.5s infinite;">❤️</div>
+                            <!-- Small decorative sparkles around image -->
+                            <div style="position: absolute; top: 40px; left: 15px; font-size: 16px; transform: rotate(-20deg); animation: float 3s infinite ease-in-out;">✨</div>
+                            <div style="position: absolute; top: 30%; right: 15px; font-size: 16px; transform: rotate(15deg); animation: float 4s infinite ease-in-out;">✨</div>
+                            <div style="position: absolute; bottom: 40px; left: 20px; font-size: 16px; transform: rotate(-10deg); animation: float 2.5s infinite ease-in-out;">✨</div>
+                            <div style="position: absolute; bottom: 60px; right: 20px; font-size: 16px; transform: rotate(20deg); animation: float 3.5s infinite ease-in-out;">✨</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <script>
-            // Auto-play the audio when the modal opens
-            setTimeout(function() {
-                const audioElement = document.getElementById('aboutYouAudio');
-                
-                if (audioElement) {
-                    audioElement.play().catch(e => {
-                        console.log('Autoplay prevented by browser:', e);
-                    });
-                }
-            }, 500);
-        </script>`
+        </div>`
     },
     
     // Additional format to ensure it works with all date formats
-    '05-26': {
+    '05-27': {
         type: 'special',
         content: `
         <div class="text-center mb-4 fade-in">
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-4">
-                    <h3 class="mb-4" style="color: #d63384; font-weight: 600;">About You</h3>
+                    <h3 class="mb-4" style="color: #9c27b0; font-weight: 600;">You today? (cute though)</h3>
                     
                     <div class="text-center mb-4">
-                        <div style="position: relative; max-width: 90%; margin: 0 auto; padding: 15px; background: linear-gradient(135deg, #fff8fa 0%, #ffeef8 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(214, 51, 132, 0.2); border: 3px solid #ffd6e7;">
+                        <div style="position: relative; max-width: 90%; margin: 0 auto; padding: 15px; background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(156, 39, 176, 0.2); border: 3px solid #ce93d8;">
                             <!-- Corner decorations -->
-                            <div style="position: absolute; top: -10px; left: -10px; font-size: 24px;">🌸</div>
-                            <div style="position: absolute; top: -10px; right: -10px; font-size: 24px;">✨</div>
-                            <div style="position: absolute; bottom: -10px; left: -10px; font-size: 24px;">💫</div>
-                            <div style="position: absolute; bottom: -10px; right: -10px; font-size: 24px;">🌸</div>
-                            
-                            <!-- Top ribbon -->
-                            <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #ffd6e7; padding: 5px 20px; border-radius: 15px; box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
-                                <span style="font-size: 14px; color: #d63384; font-weight: 600;">Movie Theatre Memory</span>
-                            </div>
+                            <div style="position: absolute; top: -10px; left: -10px; font-size: 24px;">✨</div>
+                            <div style="position: absolute; top: -10px; right: -10px; font-size: 24px;">🌟</div>
+                            <div style="position: absolute; bottom: -10px; left: -10px; font-size: 24px;">⭐</div>
+                            <div style="position: absolute; bottom: -10px; right: -10px; font-size: 24px;">✨</div>
                             
                             <!-- The image with inner shadow and rounded corners -->
-                            <img src="static/images/aboutYouSS.png" alt="About You" class="img-fluid" style="border-radius: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); padding: 3px; background: white; max-width: 100%; height: auto; border: 1px dashed #ffb6c1;">
+                            <img src="static/images/sparkles.jpeg" alt="Sparkles" class="img-fluid" style="border-radius: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); padding: 3px; background: white; max-width: 100%; height: auto; border: 1px dashed #ce93d8;">
                             
-                            <!-- Small decorative hearts around image -->
-                            <div style="position: absolute; top: 40px; left: 15px; font-size: 16px; transform: rotate(-20deg); animation: float 3s infinite ease-in-out;">❤️</div>
-                            <div style="position: absolute; top: 30%; right: 15px; font-size: 16px; transform: rotate(15deg); animation: float 4s infinite ease-in-out;">💕</div>
-                            <div style="position: absolute; bottom: 40px; left: 20px; font-size: 16px; transform: rotate(-10deg); animation: float 2.5s infinite ease-in-out;">💖</div>
-                            <div style="position: absolute; bottom: 60px; right: 20px; font-size: 16px; transform: rotate(20deg); animation: float 3.5s infinite ease-in-out;">💓</div>
-                        </div>
-                    </div>
-                    
-                    <style>
-                        @keyframes float {
-                            0% { transform: translateY(0) rotate(-10deg); }
-                            50% { transform: translateY(-8px) rotate(5deg); }
-                            100% { transform: translateY(0) rotate(-10deg); }
-                        }
-                    </style>
-                    
-                    <div class="mt-4">
-                        <div style="background: linear-gradient(135deg, #fff0f7 0%, #ffebf4 100%); border-radius: 20px; padding: 15px; box-shadow: 0 6px 15px rgba(214, 51, 132, 0.15); position: relative; border: 2px solid #ffd6e7;">
-                            <!-- Decorative elements -->
-                            <div style="position: absolute; top: -12px; left: 20px; background: white; padding: 0 10px; border-radius: 15px; box-shadow: 0 3px 5px rgba(0,0,0,0.1);">
-                                <span style="font-size: 14px; color: #d63384; font-weight: 600;">♫ About You ♫</span>
-                            </div>
-                            <div style="position: absolute; top: 10px; right: 15px; font-size: 18px;">🎵</div>
-                            <div style="position: absolute; bottom: 8px; left: 15px; font-size: 16px;">💖</div>
-                            
-                            <!-- Audio player -->
-                            <audio id="aboutYouAudio" src="static/audio/aboutYou.mp3" controls class="w-100 mt-2" style="border-radius: 30px; height: 40px; margin-top: 10px;"></audio>
-                            
-                            <!-- Animated heart -->
-                            <div style="position: absolute; bottom: 8px; right: 15px; font-size: 16px; animation: heartbeat 1.5s infinite;">❤️</div>
+                            <!-- Small decorative sparkles around image -->
+                            <div style="position: absolute; top: 40px; left: 15px; font-size: 16px; transform: rotate(-20deg); animation: float 3s infinite ease-in-out;">✨</div>
+                            <div style="position: absolute; top: 30%; right: 15px; font-size: 16px; transform: rotate(15deg); animation: float 4s infinite ease-in-out;">✨</div>
+                            <div style="position: absolute; bottom: 40px; left: 20px; font-size: 16px; transform: rotate(-10deg); animation: float 2.5s infinite ease-in-out;">✨</div>
+                            <div style="position: absolute; bottom: 60px; right: 20px; font-size: 16px; transform: rotate(20deg); animation: float 3.5s infinite ease-in-out;">✨</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <script>
-            // Auto-play the audio when the modal opens
-            setTimeout(function() {
-                const audioElement = document.getElementById('aboutYouAudio');
-                
-                if (audioElement) {
-                    audioElement.play().catch(e => {
-                        console.log('Autoplay prevented by browser:', e);
-                    });
-                }
-            }, 500);
-        </script>`
+        </div>`
     },
     
     // Other entries
@@ -1512,6 +1462,12 @@ function getDailyContent(dateStr) {
     if (dateStr.endsWith('-05-26') || dateStr === '05-26') {
         console.log('Special handling for May 26th - About You');
         return dailyContent['2025-05-26'].content;
+    }
+    
+    // Special handling for May 27th - Sparkles
+    if (dateStr.endsWith('-05-27') || dateStr === '05-27') {
+        console.log('Special handling for May 27th - Sparkles');
+        return dailyContent['2025-05-27'].content;
     }
     
     // If we have content for this specific day, return it
@@ -2529,6 +2485,80 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return may26Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for May 27th - Sparkles
+    if (date.getMonth() === 4 && date.getDate() === 27) {
+        element.classList.add('sparkles-date');
+        element.setAttribute('title', 'You today? (cute though)');
+        
+        // Add a sparkle icon indicator
+        const sparkleIcon = document.createElement('div');
+        sparkleIcon.innerHTML = '✨';
+        sparkleIcon.style.position = 'absolute';
+        sparkleIcon.style.top = '-8px';
+        sparkleIcon.style.right = '-8px';
+        sparkleIcon.style.fontSize = '18px';
+        sparkleIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        sparkleIcon.style.zIndex = '2';
+        sparkleIcon.style.background = 'rgba(255,255,255,0.95)';
+        sparkleIcon.style.borderRadius = '50%';
+        sparkleIcon.style.width = '28px';
+        sparkleIcon.style.height = '28px';
+        sparkleIcon.style.display = 'flex';
+        sparkleIcon.style.alignItems = 'center';
+        sparkleIcon.style.justifyContent = 'center';
+        sparkleIcon.style.boxShadow = '0 3px 6px rgba(0,0,0,0.15), inset 0 1px 3px rgba(255,255,255,0.5)';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(sparkleIcon);
+        
+        // Add styling for the date element
+        element.style.background = 'linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%)';
+        element.style.color = 'white';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(156, 39, 176, 0.4)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        sparkleIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            sparkleIcon.style.transform = 'scale(1.2) rotate(15deg)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            sparkleIcon.style.transform = 'scale(1) rotate(0deg)';
+        });
+        
+        // Follow the same rules as other dates
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for May 27
+                const may27Date = `${date.getFullYear()}-05-27`;
+                console.log('Special May 27 clicked with date:', may27Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may27Date;
                         }
                     }
                 };
