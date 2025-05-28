@@ -666,4 +666,34 @@ h1 {
     100% {
         transform: rotate(20deg) scale(1);
     }
+}
+
+.calendar-day.strolling-date {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    color: #388e3c;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(56, 142, 60, 0.18);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.calendar-day.strolling-date:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(56, 142, 60, 0.25);
+}
+
+.calendar-day.strolling-date::after {
+    content: '🚶‍♂️';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 16px;
+    background: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 } 

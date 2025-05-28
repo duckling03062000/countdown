@@ -1335,6 +1335,81 @@ You're always there, like a steady feeling...
     
     // Other entries
     // ... existing code ...
+    
+    // May 28 - Strolling image
+    '2025-05-28': {
+        type: 'special',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+            
+                    <div class="text-center mb-4">
+                        <div style="position: relative; max-width: 90%; margin: 0 auto; padding: 15px; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(56, 142, 60, 0.15); border: 3px solid #a5d6a7;">
+                            <!-- Corner decorations -->
+                            <div style="position: absolute; top: -10px; left: -10px; font-size: 24px;">🚶‍♂️</div>
+                            <div style="position: absolute; top: -10px; right: -10px; font-size: 24px;">🌳</div>
+                            <div style="position: absolute; bottom: -10px; left: -10px; font-size: 24px;">🌿</div>
+                            <div style="position: absolute; bottom: -10px; right: -10px; font-size: 24px;">🚶‍♀️</div>
+                            <!-- The image with inner shadow and rounded corners -->
+                            <img src="static/images/strolling.png" alt="Strolling" class="img-fluid" style="border-radius: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); padding: 3px; background: white; max-width: 100%; height: auto; border: 1px dashed #a5d6a7;">
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a id="strolling-cute-btn" href="https://docs.google.com/document/d/1taIUmMWwKVos3ZwBbVlB1fNyQEdnKOPzQNCsRQHvi90/edit?usp=sharing" target="_blank" rel="noopener noreferrer"
+                           style="display: inline-block; padding: 14px 32px; font-size: 1.15rem; font-weight: 600; color: #fff; background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%); border: none; border-radius: 30px; box-shadow: 0 4px 15px rgba(56, 142, 60, 0.15); text-decoration: none; transition: background 0.3s, transform 0.2s; position: relative; overflow: hidden;">
+                            <span style="position: relative; z-index: 2; display: flex; align-items: center; gap: 10px;">
+                                <span> Look what I found! 💚</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M6.354 5.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1H7.707l4.147-4.146a.5.5 0 1 0-.708-.708L7 8.293V6a.5.5 0 0 0-.5-.5z"/></svg>
+                            </span>
+                        </a>
+                        <style>
+                        #strolling-cute-btn:hover {
+                            background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+                            transform: scale(1.07);
+                        }
+                        #strolling-cute-btn:active {
+                            background: linear-gradient(90deg, #0c7b6b 0%, #2bcf6e 100%);
+                        }
+                        #strolling-cute-btn .ripple {
+                            position: absolute;
+                            border-radius: 50%;
+                            transform: scale(0);
+                            animation: ripple-effect 0.5s linear;
+                            background-color: rgba(255,255,255,0.5);
+                            pointer-events: none;
+                        }
+                        @keyframes ripple-effect {
+                            to {
+                                transform: scale(2.5);
+                                opacity: 0;
+                            }
+                        }
+                        </style>
+                        <script>
+                        (function() {
+                            var btn = document.getElementById('strolling-cute-btn');
+                            if (btn) {
+                                btn.addEventListener('click', function(e) {
+                                    var ripple = document.createElement('span');
+                                    ripple.className = 'ripple';
+                                    var rect = btn.getBoundingClientRect();
+                                    ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
+                                    ripple.style.left = (e.clientX - rect.left - rect.width/2) + 'px';
+                                    ripple.style.top = (e.clientY - rect.top - rect.height/2) + 'px';
+                                    btn.appendChild(ripple);
+                                    setTimeout(function() {
+                                        ripple.remove();
+                                    }, 500);
+                                });
+                            }
+                        })();
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    },
 };
 
 // Get content for a specific day
