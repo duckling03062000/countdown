@@ -1410,6 +1410,72 @@ You're always there, like a steady feeling...
             </div>
         </div>`
     },
+    
+    // Special handling for May 29th - Espresso Message
+    '2025-05-29': {
+        type: 'special',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #a0522d; font-family: 'Poppins', cursive, sans-serif; font-weight: 700; font-size: 2rem; letter-spacing: 0.5px; text-shadow: 0 2px 8px #ffe0f7;">
+                   Talking to you is like an espresso shot <span style="font-size: 2.2rem; vertical-align: middle;">✨</span>
+                    </h3>
+                    <div class="my-4" style="position: relative;">
+                        <!-- Cute corner emojis -->
+                        <span style="position: absolute; top: -30px; left: -30px; font-size: 2.2rem;">💖</span>
+                        <span style="position: absolute; top: -30px; right: -30px; font-size: 2.2rem;">☕️</span>
+                        <span style="position: absolute; bottom: -30px; left: -30px; font-size: 2.2rem;">✨</span>
+                        <span style="position: absolute; bottom: -30px; right: -30px; font-size: 2.2rem;">🧡</span>
+                        <img src="static/images/espresso.jpeg" alt="Espresso" style="max-width: 320px; width: 90%; border-radius: 28px; box-shadow: 0 8px 32px 0 #ffe0f7, 0 2px 12px 0 #b2f7ef; margin-bottom: 18px; animation: espresso-pop 1.1s cubic-bezier(.68,-0.55,.27,1.55); background: #fff8f0; border: 3px solid #ffe0f7;">
+                    </div>
+                    <div style="font-size: 1.15rem; color: #a0522d; font-family: 'Poppins', cursive, sans-serif; margin-top: 10px; background: linear-gradient(90deg, #fff0f7 0%, #f7ffe0 100%); border-radius: 18px; padding: 12px 18px; box-shadow: 0 2px 8px #ffe0f7; display: inline-block;">
+                        Fun, strong, and makes my day better! 
+                    </div>
+                    <style>
+                        @keyframes espresso-pop {
+                            0% { transform: scale(0.7) rotate(-8deg); opacity: 0; }
+                            60% { transform: scale(1.1) rotate(4deg); opacity: 1; }
+                            100% { transform: scale(1) rotate(0); opacity: 1; }
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>`
+    },
+    
+    // Specific handling for May 29th - Espresso Day
+    '2025-05-29': {
+        type: 'special',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #a0522d; font-family: 'Poppins', cursive, sans-serif; font-weight: 700; font-size: 2rem; letter-spacing: 0.5px; text-shadow: 0 2px 8px #ffe0f7;">
+                   Talking to you is like an espresso shot <span style="font-size: 2.2rem; vertical-align: middle;">✨</span>
+                    </h3>
+                    <div class="my-4" style="position: relative;">
+                        <!-- Cute corner emojis -->
+                        <span style="position: absolute; top: -30px; left: -30px; font-size: 2.2rem;">💖</span>
+                        <span style="position: absolute; top: -30px; right: -30px; font-size: 2.2rem;">☕️</span>
+                        <span style="position: absolute; bottom: -30px; left: -30px; font-size: 2.2rem;">✨</span>
+                        <span style="position: absolute; bottom: -30px; right: -30px; font-size: 2.2rem;">🧡</span>
+                        <img src="static/images/espresso.jpeg" alt="Espresso" style="max-width: 320px; width: 90%; border-radius: 28px; box-shadow: 0 8px 32px 0 #ffe0f7, 0 2px 12px 0 #b2f7ef; margin-bottom: 18px; animation: espresso-pop 1.1s cubic-bezier(.68,-0.55,.27,1.55); background: #fff8f0; border: 3px solid #ffe0f7;">
+                    </div>
+                    <div style="font-size: 1.15rem; color: #a0522d; font-family: 'Poppins', cursive, sans-serif; margin-top: 10px; background: linear-gradient(90deg, #fff0f7 0%, #f7ffe0 100%); border-radius: 18px; padding: 12px 18px; box-shadow: 0 2px 8px #ffe0f7; display: inline-block;">
+                        Fun, strong, and makes my day better! 
+                    </div>
+                    <style>
+                        @keyframes espresso-pop {
+                            0% { transform: scale(0.7) rotate(-8deg); opacity: 0; }
+                            60% { transform: scale(1.1) rotate(4deg); opacity: 1; }
+                            100% { transform: scale(1) rotate(0); opacity: 1; }
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>`
+    },
 };
 
 // Get content for a specific day
