@@ -1476,6 +1476,76 @@ You're always there, like a steady feeling...
             </div>
         </div>`
     },
+    
+    // Special handling for May 30th - Movie & Dish List
+    '2025-05-30': {
+        type: 'special',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm" style="background: linear-gradient(135deg, #e3f2fd 0%, #fffde7 100%); border-radius: 28px; box-shadow: 0 8px 32px 0 #e3f2fd, 0 2px 12px 0 #fffde7; overflow: hidden;">
+                <div class="card-body p-4" style="position: relative;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="font-size: 3.2rem; display: inline-block; animation: movie-bounce 1.5s infinite alternate cubic-bezier(.68,-0.55,.27,1.55); filter: drop-shadow(0 2px 8px #b2dfdb);">🎬🍿✨</span>
+                    </div>
+                    <h3 class="mb-2" style="color: #1976d2; font-family: 'Poppins', cursive, sans-serif; font-weight: 700; font-size: 2rem; letter-spacing: 0.5px; text-shadow: 0 2px 8px #e3f2fd;">
+                        Redemption, movies you might like, I hope I do not screw up the list!
+                    </h3>
+                    <div style="color: #7b1fa2; font-size: 1.1rem; font-family: 'Poppins', cursive, sans-serif; margin-bottom: 1.2rem;">A little cinema magic for your day 🍿</div>
+                    <hr style="border-top: 2px dashed #b2dfdb; width: 60px; margin: 1.2rem auto 1.5rem auto;">
+                    <div class="my-4" style="position: relative; max-width: 420px; margin: 0 auto;">
+                        <ul style="list-style: none; padding: 0; margin: 0; text-align: left; font-size: 1.15rem; color: #333;">
+                            <li class="movie-li" style="margin-bottom: 12px; background: #fffde7; border-radius: 18px; padding: 10px 18px; box-shadow: 0 2px 8px #e3f2fd; display: flex; align-items: center; gap: 10px; transition: background 0.2s;">
+                                <span style="font-size: 1.3rem;">🍿</span> How to Lose a Guy in 10 Days
+                            </li>
+                            <li class="movie-li" style="margin-bottom: 12px; background: #e3f2fd; border-radius: 18px; padding: 10px 18px; box-shadow: 0 2px 8px #fffde7; display: flex; align-items: center; gap: 10px; transition: background 0.2s;">
+                                <span style="font-size: 1.3rem;">🎬</span> It Could Happen to You
+                            </li>
+                        
+                            <li class="movie-li" style="margin-bottom: 12px; background: #fffde7; border-radius: 18px; padding: 10px 18px; box-shadow: 0 2px 8px #e3f2fd; display: flex; align-items: center; gap: 10px; transition: background 0.2s;">
+                                <span style="font-size: 1.3rem;">🐌</span> Turbo
+                            </li>
+                            <li class="movie-li" style="margin-bottom: 12px; background: #e3f2fd; border-radius: 18px; padding: 10px 18px; box-shadow: 0 2px 8px #fffde7; display: flex; align-items: center; gap: 10px; transition: background 0.2s;">
+                                <span style="font-size: 1.3rem;">⚾</span> Moneyball
+                            </li>
+                            <li class="movie-li" style="margin-bottom: 12px; background: #fffde7; border-radius: 18px; padding: 10px 18px; box-shadow: 0 2px 8px #e3f2fd; display: flex; align-items: center; gap: 10px; transition: background 0.2s;">
+                                <span style="font-size: 1.3rem;">📝</span> 10 Things I Hate About You
+                            </li>
+                           
+                            <li class="movie-li" style="margin-bottom: 12px; background: #fffde7; border-radius: 18px; padding: 10px 18px; box-shadow: 0 2px 8px #e3f2fd; display: flex; align-items: center; gap: 10px; transition: background 0.2s;">
+                                <span style="font-size: 1.3rem;">📖</span> The Perks of Being a Wallflower
+                            </li>
+                            <li class="movie-li" style="margin-bottom: 12px; background: #e3f2fd; border-radius: 18px; padding: 10px 18px; box-shadow: 0 2px 8px #fffde7; display: flex; align-items: center; gap: 10px; transition: background 0.2s;">
+                                <span style="font-size: 1.3rem;">🏎️</span> Ford V Ferrari
+                            </li>
+                            <li class="movie-li" style="margin-bottom: 12px; background: #fffde7; border-radius: 18px; padding: 10px 18px; box-shadow: 0 2px 8px #e3f2fd; display: flex; align-items: center; gap: 10px; transition: background 0.2s;">
+                                <span style="font-size: 1.3rem;">🎖️</span> Hacksaw Ridge
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 2.2rem;">
+                        <span style="font-size: 2.1rem;">🍿🎟️🎥</span>
+                    </div>
+                    <div class="mt-4" style="color: #7b1fa2; font-size: 1.1rem; font-family: 'Poppins', cursive, sans-serif; opacity: 0.8;">
+                        Enjoy your movie night! <span style="font-size: 1.3rem;">✨</span>
+                    </div>
+                </div>
+            </div>
+            <style>
+            @keyframes movie-bounce {
+                0% { transform: scale(1) translateY(0); }
+                60% { transform: scale(1.15) translateY(-10px); }
+                100% { transform: scale(1) translateY(0); }
+            }
+            .movie-li:hover {
+                background: #ffe082 !important;
+                box-shadow: 0 4px 16px #ffe082, 0 2px 8px #e3f2fd;
+                cursor: pointer;
+                transform: scale(1.04);
+                transition: all 0.18s cubic-bezier(.68,-0.55,.27,1.55);
+            }
+            </style>
+            `
+    },
 };
 
 // Get content for a specific day
@@ -2745,6 +2815,91 @@ function addDayClickHandler(element, date, currentDate) {
         element.addEventListener('click', function(event) {
             showFutureDateMessage(date);
         });
+    }
+    
+    // Specific handling for May 30th - Movie & Dish List
+    if (date.getMonth() === 4 && date.getDate() === 30) {
+        element.classList.add('movie-date');
+        element.setAttribute('title', 'Movie & Dish List!');
+        // Add a cute popcorn icon badge with sparkles and ticket
+        const popcornIcon = document.createElement('div');
+        popcornIcon.innerHTML = `
+            <span style="position: relative; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 2.3rem; z-index: 2; animation: popcorn-bounce 1.5s infinite alternate cubic-bezier(.68,-0.55,.27,1.55);">🍿</span>
+                <span style="position: absolute; top: -10px; left: 18px; font-size: 1.2rem; animation: sparkle30a 1.6s infinite alternate;">✨</span>
+                <span style="position: absolute; top: 18px; right: -10px; font-size: 1.1rem; animation: sparkle30b 1.2s infinite alternate;">🎟️</span>
+            </span>
+        `;
+        popcornIcon.style.position = 'absolute';
+        popcornIcon.style.top = '-18px';
+        popcornIcon.style.right = '-18px';
+        popcornIcon.style.width = '52px';
+        popcornIcon.style.height = '52px';
+        popcornIcon.style.display = 'flex';
+        popcornIcon.style.alignItems = 'center';
+        popcornIcon.style.justifyContent = 'center';
+        popcornIcon.style.background = 'linear-gradient(135deg, #fffde7 0%, #e3f2fd 100%);';
+        popcornIcon.style.borderRadius = '50%';
+        popcornIcon.style.boxShadow = '0 0 0 8px rgba(255,235,59,0.13), 0 4px 18px #e3f2fd, 0 2px 8px #fffde7';
+        popcornIcon.style.border = '3px solid';
+        popcornIcon.style.borderImage = 'linear-gradient(135deg, #fffde7 0%, #e3f2fd 100%) 1';
+        popcornIcon.style.zIndex = '3';
+        popcornIcon.style.transition = 'all 0.3s cubic-bezier(.68,-0.55,.27,1.55)';
+        popcornIcon.style.animation = 'popcorn-glow30 2.2s infinite alternate';
+        // Add keyframes for sparkles and glow
+        const styleTag = document.createElement('style');
+        styleTag.innerHTML = `
+            @keyframes popcorn-glow30 {
+                0% { box-shadow: 0 0 0 8px rgba(255,235,59,0.13), 0 4px 18px #e3f2fd, 0 2px 8px #fffde7; }
+                100% { box-shadow: 0 0 0 16px rgba(255,235,59,0.22), 0 8px 32px #e3f2fd, 0 4px 16px #fffde7; }
+            }
+            @keyframes popcorn-bounce {
+                0% { transform: scale(1) translateY(0); }
+                60% { transform: scale(1.18) translateY(-8px); }
+                100% { transform: scale(1) translateY(0); }
+            }
+            @keyframes sparkle30a { 0%{opacity:0.7;transform:scale(1);} 100%{opacity:1;transform:scale(1.25) rotate(-10deg);} }
+            @keyframes sparkle30b { 0%{opacity:0.6;transform:scale(1);} 100%{opacity:1;transform:scale(1.18) rotate(8deg);} }
+        `;
+        document.head.appendChild(styleTag);
+        element.style.position = 'relative';
+        element.appendChild(popcornIcon);
+        // Add pastel background and bold font
+        element.style.background = 'linear-gradient(135deg, #fffde7 0%, #e3f2fd 100%)';
+        element.style.color = '#fbc02d';
+        element.style.fontWeight = '700';
+        element.style.boxShadow = '0 4px 18px #fffde7, 0 2px 8px #e3f2fd';
+        element.style.transition = 'all 0.3s cubic-bezier(.68,-0.55,.27,1.55)';
+        // Add bounce and glow on hover
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.13) rotate(-2deg)';
+            popcornIcon.style.transform = 'scale(1.18) rotate(8deg)';
+            popcornIcon.style.boxShadow = '0 0 0 20px rgba(255,235,59,0.22), 0 8px 32px #e3f2fd, 0 4px 16px #fffde7';
+        });
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0)';
+            popcornIcon.style.transform = 'scale(1) rotate(0)';
+            popcornIcon.style.boxShadow = '0 0 0 8px rgba(255,235,59,0.13), 0 4px 18px #e3f2fd, 0 2px 8px #fffde7';
+        });
+        // Only make it interactive if it's today or in the past
+        if (date <= currentDate || CONFIG.STAGING === "1") {
+            element.addEventListener('click', function(event) {
+                const may30Date = `${date.getFullYear()}-05-30`;
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may30Date;
+                        }
+                    }
+                };
+                openDayModal(customEvent);
+            });
+        } else {
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
     }
 }
 
