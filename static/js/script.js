@@ -1546,6 +1546,51 @@ You're always there, like a steady feeling...
             </style>
             `
     },
+    // Special handling for May 31st - Soldier image
+    '2025-05-31': {
+        type: 'special',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 28px; box-shadow: 0 8px 32px 0 #c3cfe2, 0 2px 12px 0 #f5f7fa; overflow: hidden;">
+                <div class="card-body p-4" style="position: relative;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="font-size: 2.7rem; display: inline-block; animation: soldier-bounce 1.5s infinite alternate cubic-bezier(.68,-0.55,.27,1.55); filter: drop-shadow(0 2px 8px #b0bec5);">🪖</span>
+                    </div>
+                    <h3 class="mb-2" style="color: #37474f; font-family: 'Poppins', cursive, sans-serif; font-weight: 700; font-size: 2rem; letter-spacing: 0.5px; text-shadow: 0 2px 8px #c3cfe2;">
+                        Soldier who?
+                    </h3>
+                    <div class="mb-4" style="display: inline-block; padding: 8px 28px; background: linear-gradient(90deg, #e3f2fd 0%, #fffde7 100%); border-radius: 22px; box-shadow: 0 2px 12px #e3f2fd; color: #1976d2; font-size: 1.28rem; font-family: 'Poppins', cursive, sans-serif; font-weight: 700; letter-spacing: 0.5px; text-shadow: 0 1px 4px #e3f2fd; position: relative; animation: brave-glow 2.2s infinite alternate;">
+                            <span style="font-size: 1.3rem; vertical-align: middle; margin-right: 6px;">🌟</span>
+                            Our Brave Ayrisha !
+                            <span style="font-size: 1.3rem; vertical-align: middle; margin-left: 6px;">💙</span>
+                        </div>
+                    </div>
+                    <style>
+                    @keyframes brave-glow {
+                        0% { box-shadow: 0 2px 12px #e3f2fd, 0 0 0 0 #fffde7; }
+                        100% { box-shadow: 0 6px 24px #e3f2fd, 0 0 0 8px #fffde7; }
+                    }
+                    </style>
+                    <div class="my-4" style="position: relative; max-width: 420px; margin: 0 auto;">
+                        <img src="static/images/soldier.jpeg" alt="Soldier" class="img-fluid rounded shadow" style="max-width: 320px; width: 90%; border-radius: 22px; box-shadow: 0 8px 32px 0 #c3cfe2, 0 2px 12px 0 #f5f7fa; background: #f5f7fa; border: 3px solid #c3cfe2; margin-bottom: 18px; animation: soldier-pop 1.1s cubic-bezier(.68,-0.55,.27,1.55);">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+        @keyframes soldier-bounce {
+            0% { transform: scale(1) translateY(0); }
+            60% { transform: scale(1.12) translateY(-8px); }
+            100% { transform: scale(1) translateY(0); }
+        }
+        @keyframes soldier-pop {
+            0% { transform: scale(0.7) rotate(-8deg); opacity: 0; }
+            60% { transform: scale(1.1) rotate(4deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0); opacity: 1; }
+        }
+        </style>
+        `
+    },
 };
 
 // Get content for a specific day
@@ -2889,6 +2934,88 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return may30Date;
+                        }
+                    }
+                };
+                openDayModal(customEvent);
+            });
+        } else {
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    // Specific handling for May 31st - Soldier image
+    if (date.getMonth() === 4 && date.getDate() === 31) {
+        element.classList.add('soldier-date');
+        element.setAttribute('title', 'Soldier who?');
+        // Add a cute soldier helmet icon badge
+        const soldierIcon = document.createElement('div');
+        soldierIcon.innerHTML = `
+            <span style="position: relative; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 2.1rem; z-index: 2; animation: soldier-bounce 1.5s infinite alternate cubic-bezier(.68,-0.55,.27,1.55);">🪖</span>
+                <span style="position: absolute; top: -10px; left: 18px; font-size: 1.1rem; animation: sparkle31a 1.6s infinite alternate;">✨</span>
+            </span>
+        `;
+        soldierIcon.style.position = 'absolute';
+        soldierIcon.style.top = '-18px';
+        soldierIcon.style.right = '-18px';
+        soldierIcon.style.width = '48px';
+        soldierIcon.style.height = '48px';
+        soldierIcon.style.display = 'flex';
+        soldierIcon.style.alignItems = 'center';
+        soldierIcon.style.justifyContent = 'center';
+        soldierIcon.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+        soldierIcon.style.borderRadius = '50%';
+        soldierIcon.style.boxShadow = '0 0 0 8px rgba(120,144,156,0.13), 0 4px 18px #c3cfe2, 0 2px 8px #f5f7fa';
+        soldierIcon.style.border = '3px solid';
+        soldierIcon.style.borderImage = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) 1';
+        soldierIcon.style.zIndex = '3';
+        soldierIcon.style.transition = 'all 0.3s cubic-bezier(.68,-0.55,.27,1.55)';
+        soldierIcon.style.animation = 'soldier-glow31 2.2s infinite alternate';
+        // Add keyframes for sparkles and glow
+        const styleTag = document.createElement('style');
+        styleTag.innerHTML = `
+            @keyframes soldier-glow31 {
+                0% { box-shadow: 0 0 0 8px rgba(120,144,156,0.13), 0 4px 18px #c3cfe2, 0 2px 8px #f5f7fa; }
+                100% { box-shadow: 0 0 0 16px rgba(120,144,156,0.22), 0 8px 32px #c3cfe2, 0 4px 16px #f5f7fa; }
+            }
+            @keyframes soldier-bounce {
+                0% { transform: scale(1) translateY(0); }
+                60% { transform: scale(1.12) translateY(-8px); }
+                100% { transform: scale(1) translateY(0); }
+            }
+            @keyframes sparkle31a { 0%{opacity:0.7;transform:scale(1);} 100%{opacity:1;transform:scale(1.25) rotate(-10deg);} }
+        `;
+        document.head.appendChild(styleTag);
+        element.style.position = 'relative';
+        element.appendChild(soldierIcon);
+        // Add pastel background and bold font
+        element.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+        element.style.color = '#37474f';
+        element.style.fontWeight = '700';
+        element.style.boxShadow = '0 4px 18px #c3cfe2, 0 2px 8px #f5f7fa';
+        element.style.transition = 'all 0.3s cubic-bezier(.68,-0.55,.27,1.55)';
+        // Add bounce and glow on hover
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.13) rotate(-2deg)';
+            soldierIcon.style.transform = 'scale(1.18) rotate(8deg)';
+            soldierIcon.style.boxShadow = '0 0 0 20px rgba(120,144,156,0.22), 0 8px 32px #c3cfe2, 0 4px 16px #f5f7fa';
+        });
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0)';
+            soldierIcon.style.transform = 'scale(1) rotate(0)';
+            soldierIcon.style.boxShadow = '0 0 0 8px rgba(120,144,156,0.13), 0 4px 18px #c3cfe2, 0 2px 8px #f5f7fa';
+        });
+        // Only make it interactive if it's today or in the past
+        if (date <= currentDate || CONFIG.STAGING === "1") {
+            element.addEventListener('click', function(event) {
+                const may31Date = `${date.getFullYear()}-05-31`;
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return may31Date;
                         }
                     }
                 };
