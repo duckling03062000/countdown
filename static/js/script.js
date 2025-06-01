@@ -919,7 +919,18 @@ const dailyContent = {
     // Example song embeds
     '2025-06-01': {
         type: 'song',
-        content: '<div class="text-center mb-3"><h4>Summertime Anticipation</h4></div><iframe width="100%" height="315" src="https://www.youtube.com/embed/f5omECqDrQM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p class="mt-3">Kick off June with this summer classic! What are you looking forward to most this summer?</p>'
+        content: `
+        <div class="text-center mb-3">
+            
+        </div>
+        <div class="alert alert-info p-4 fade-in" style="font-size: 1.1rem;">
+            <p>You do not know how much I appreciate knowing you. Conversations with you light up my mood :) Thank you for being there. I really like your name, <b>"Ayrisha"</b>, how you speak. Your voice is really nice. Now before I overwhelm you, I will stop. Loads of hugs to you🫂, you little creature :) Take care of yourself, always. 😊</p>
+        </div>
+        <div class="text-center my-4">
+            <h5 class="mb-3">I came across this today</h5>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/62RXe5I6L7n32fUMd8Puvo?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    `
     },
     
     '2025-06-05': {
