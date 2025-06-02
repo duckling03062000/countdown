@@ -932,6 +932,43 @@ const dailyContent = {
         </div>
     `
     },
+    // Custom message for June 2, 2025
+    '2025-06-02': {
+        type: 'note',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-sm" style="background: linear-gradient(135deg, #fffbe7 0%, #ffe0b2 100%); border-radius: 28px; box-shadow: 0 8px 32px 0 #ffe0b2, 0 2px 12px 0 #fffde7; overflow: hidden; position: relative;">
+                <!-- Confetti and balloons -->
+                
+                <div style="position: absolute; bottom: 10px; left: 30px; font-size: 1.7rem;">🎊</div>
+                <div style="position: absolute; bottom: 10px; right: 30px; font-size: 1.7rem;">🎁</div>
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #ff9800; font-family: 'Poppins', cursive, sans-serif; font-weight: 800; font-size: 2.2rem; letter-spacing: 0.5px; text-shadow: 0 2px 8px #ffe0b2;">
+                        So our first birthday? <span style="font-size: 2rem; vertical-align: middle;">😌</span>
+                    </h3>
+                    <div class="my-4 birthday-highlight" style="font-size: 1.5rem; color: #fff; font-family: 'Poppins', cursive, sans-serif; background: linear-gradient(90deg, #ff9800 0%, #ffd54f 100%); border-radius: 22px; padding: 22px 28px; box-shadow: 0 4px 18px #ffe0b2; display: inline-block; font-weight: 700; position: relative; animation: birthday-pop 1.2s cubic-bezier(.68,-0.55,.27,1.55);">
+                        
+                        I am already <span style="color: #fffde7; text-shadow: 0 2px 8px #ff9800;">happyyyyyyyyyy</span> with you being in it :)
+                        <span style="font-size: 2rem; vertical-align: middle; margin-left: 10px;">💛</span>
+                    </div>
+                    <div class="mt-4" style="font-size: 1.1rem; color: #ff9800; font-family: 'Poppins', cursive, sans-serif; opacity: 0.85;">
+                        <span style="font-size: 1.3rem;">✨</span>   <span style="font-size: 1.3rem;">🎉</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+        @keyframes birthday-pop {
+            0% { transform: scale(0.7) rotate(-8deg); opacity: 0; }
+            60% { transform: scale(1.1) rotate(4deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0); opacity: 1; }
+        }
+        .birthday-highlight {
+            animation: birthday-pop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        </style>
+        `
+    },
     
     '2025-06-05': {
         type: 'song',
