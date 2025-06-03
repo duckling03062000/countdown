@@ -1639,6 +1639,27 @@ You're always there, like a steady feeling...
         </style>
         `
     },
+    // Create a variable for the June 3rd birthday content
+    '2025-06-03': {
+        type: 'special',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="position-relative" style="max-width: 600px; margin: 0 auto;">
+                <img src=\"static/images/birthday.jpeg\" class=\"img-fluid rounded shadow mb-4\" alt=\"Birthday\" style=\"max-height: 600px; border: 4px solid #ffe082; background: #fffde7;\">
+            </div>
+            <div class="card border-0 shadow-sm mx-auto" style="max-width: 600px; background: linear-gradient(135deg, #fffbe7 0%, #ffe082 100%); border-radius: 18px; box-shadow: 0 8px 32px 0 #ffe082, 0 2px 12px 0 #fffde7;">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #ffb300; font-family: 'Poppins', cursive, sans-serif; font-weight: 700; font-size: 2rem; letter-spacing: 0.5px; text-shadow: 0 2px 8px #ffe082;">
+                        Thank You, Ayrisha! <span style=\"font-size: 2rem; vertical-align: middle;\">🎂</span>
+                    </h3>
+                    <p class="lead" style="font-size: 1.15rem; color: #7c4700; font-family: 'Poppins', sans-serif; font-weight: 500;">
+                        Thank you for all the efforts you put in for today. I love all the words you have written for me. Those flowers are so pretty. And, you being there on my birthday makes me feel so nice! This day would not have been same without you. So many many thanks!
+                    </p>
+                </div>
+            </div>
+        </div>
+        `
+    },
 };
 
 // Get content for a specific day
