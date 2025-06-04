@@ -1660,6 +1660,15 @@ You're always there, like a steady feeling...
         </div>
         `
     },
+    '2025-06-04': {
+        type: 'image',
+        content: `
+            <div class="text-center mb-3">
+                <h4 class="mb-4" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 700; color: #6d4c41;">When water met coffee :)</h4>
+                <img src="static/images/coffeeMetWater.jpeg" alt="When water met coffee" class="img-fluid rounded shadow" style="max-width: 350px; margin: 0 auto 20px; display: block; box-shadow: 0 4px 18px #bca18c;">
+            </div>
+        `
+    },
 };
 
 // Get content for a specific day
