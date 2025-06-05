@@ -979,7 +979,7 @@ const dailyContent = {
                     <img src="static/images/dreamy.jpeg" alt="Dreamy" class="img-fluid rounded shadow" style="max-width: 100%; box-shadow: 0 4px 18px #bca18c;">
                 </div>
                 <audio id="dreamyAudio" src="static/audio/forever.mp3" controls autoplay style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 2px 8px #bca18c;"></audio>
-                <div class="mt-3 text-muted" style="font-size: 1.1rem;">This was beautiful. Thanks!</div>
+                <div class="mt-3 text-muted" style="font-size: 1.1rem;">This was beautiful.Thanks!</div>
             </div>
             <script>
                 setTimeout(function() {
