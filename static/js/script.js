@@ -971,24 +971,28 @@ const dailyContent = {
     },
     
     '2025-06-05': {
-        type: 'song',
-        content: '<div class="text-center mb-3"><h4>Midweek Pick-Me-Up</h4></div><iframe src="https://open.spotify.com/embed/track/6nek1Nin9q48AVZcWs9e9D" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><p class="mt-3">A perfect song to boost your energy through the rest of the week!</p>'
+        type: 'special',
+        content: `
+            <div class="text-center mb-4 fade-in">
+                <h4 class="mb-4" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 700; color: #6d4c41;"> Hey :)</h4>
+                <div class="position-relative mb-4" style="max-width: 400px; margin: 0 auto;">
+                    <img src="static/images/dreamy.jpeg" alt="Dreamy" class="img-fluid rounded shadow" style="max-width: 100%; box-shadow: 0 4px 18px #bca18c;">
+                </div>
+                <audio id="dreamyAudio" src="static/audio/forever.mp3" controls autoplay style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 2px 8px #bca18c;"></audio>
+                <div class="mt-3 text-muted" style="font-size: 1.1rem;">This was beautiful. Thanks!</div>
+            </div>
+            <script>
+                setTimeout(function() {
+                    var audio = document.getElementById('dreamyAudio');
+                    if(audio) { audio.play().catch(()=>{}); }
+                }, 500);
+            </script>
+        `
     },
     
     '2025-06-10': {
         type: 'song',
-        content: '<div class="text-center mb-3"><h4>Countdown: 11 Days Left!</h4></div><iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/571035771&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><p class="mt-3">Getting closer to our special day. How are you preparing?</p>'
-    },
-    
-    // Example notes and reflections
-    '2025-06-03': {
-        type: 'note',
-        content: '<div class="alert alert-info p-4"><h4 class="text-center mb-3">18 Days Until June 21st</h4><p>Time for some reflection: What have you accomplished so far this year? What do you hope to achieve by June 21st?</p><p>Write down three goals you want to complete before summer officially begins:</p><ol><li>_____________________</li><li>_____________________</li><li>_____________________</li></ol></div>'
-    },
-    
-    '2025-06-07': {
-        type: 'note',
-        content: '<div class="alert alert-warning p-4"><h4 class="text-center mb-3">Two Weeks To Go!</h4><p>Today is a good day to start planning how you\'ll celebrate the summer solstice on June 21st.</p><p>Some traditional ways people celebrate:</p><ul><li>Watch the sunrise or sunset</li><li>Have a bonfire with friends</li><li>Create a flower crown</li><li>Go for a hike or spend time in nature</li><li>Have a picnic</li></ul><p class="mt-3">What will your tradition be?</p></div>'
+        content: '<div class="text-center mb-3"><h4>Midweek Pick-Me-Up</h4></div><iframe src="https://open.spotify.com/embed/track/6nek1Nin9q48AVZcWs9e9D" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><p class="mt-3">A perfect song to boost your energy through the rest of the week!</p>'
     },
     
     '2025-06-15': {
