@@ -1673,6 +1673,28 @@ You're always there, like a steady feeling...
             </div>
         `
     },
+    '2025-06-06': {
+        type: 'note',
+        content: `
+            <div class="text-center mb-4 fade-in">
+                <div class="card border-0 shadow-sm mx-auto" style="max-width: 600px; background: linear-gradient(135deg, #fffbe7 0%, #ffe0b2 100%); border-radius: 18px; box-shadow: 0 8px 32px 0 #ffe0b2, 0 2px 12px 0 #fffde7;">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 700; color: #6d4c41;">A piece of my journal (I write sometimes).</h4>
+                        <div class="text-left" style="font-family: 'Georgia', serif; font-size: 1.1rem; color: #5d4037; background: rgba(255,255,255,0.85); border-radius: 12px; padding: 18px 22px; box-shadow: 0 2px 8px #ffe0b2;">
+                            <div style="font-size: 1.05rem; color: #b0853b; margin-bottom: 10px; font-weight: 600;">4th May, 2025</div>
+                            <p style="white-space: pre-line; margin-bottom: 0;">
+We talk on call, like till late in the night. I think we have had long calls about 5-6 times. When we first talked, she said she had her ears red. I was too shy to call her. Sort of afraid. But that first call was good. We used to have network problems for the first few calls, but it got sorted when we started talking over the  Internet. 
+We share stories of our life, about our day. Slowly, we are opening up to each other. I like how she speaks. She sings very well. She is a good human. I admire that about her. 
+I cannot wait to meet her. I am afraid to meet her too. I want to see where this goes. Anyways, I feel great for having come across this person. She has an open mind about things. And for now, let's say I do fancy her. I really like her voice. 
+
+She is going to a wedding today. I will miss her. She asked me to text her at the wedding. I felt nice that she asked this to me, felt assuring. I was worried about same thing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+    },
 };
 
 // Get content for a specific day
