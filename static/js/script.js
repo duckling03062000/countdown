@@ -1695,6 +1695,38 @@ She is going to a wedding today. I will miss her. She asked me to text her at th
             </div>
         `
     },
+    '2025-06-08': {
+        type: 'song',
+        content: `
+            <div class="text-center mb-4 fade-in">
+                <h4 class="mb-3" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 700; color: #1DB954;">Here, a song for you :)</h4>
+                <div class="lyrics mt-3 mx-auto" style="max-width: 420px; background: linear-gradient(135deg, #e0f7fa 0%, #f3e5f5 100%); color: #3a3a3a; font-style: italic; font-size: 1.15rem; border-radius: 18px; box-shadow: 0 4px 16px rgba(29,185,84,0.08); padding: 18px 24px 14px 24px; margin-bottom: 22px; position: relative;">
+                    <span style="font-size: 1.5rem; vertical-align: middle; color: #1DB954; position: absolute; left: 18px; top: 12px;">🎵</span>
+                    <span style="display: block; padding-left: 32px;">
+                        "I'm sorry if I say, &quot;I need you&quot; <br>
+                        But I don't care, I'm not scared of love"
+                    </span>
+                </div>
+                <div class="position-relative mb-4" style="max-width: 600px; margin: 0 auto;">
+                <div class="position-relative mb-4" style="max-width: 600px; margin: 0 auto;">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3cKM7UXBZmgjEgEBTkaIlU?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                
+            </div>
+        `
+    },
+    '2025-06-07': {
+        type: 'video',
+        content: `
+            <div class="text-center mb-4 fade-in">
+                <h4 class="mb-3" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 700; color: #e53935;">:)</h4>
+                <div class="video-embed mx-auto mb-3" style="max-width: 480px; background: linear-gradient(135deg, #fbeee6 0%, #e3f0ff 100%); border-radius: 18px; box-shadow: 0 4px 16px rgba(229,57,53,0.08); padding: 18px 12px 12px 12px;">
+                    <iframe width="100%" height="270" style="border-radius: 12px; box-shadow: 0 2px 8px #e53935;" src="https://www.youtube.com/embed/DFmCAMyhGCQ?si=vaKTZiNW3J9YbHAd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            
+            </div>
+        `
+    },
 };
 
 // Get content for a specific day
