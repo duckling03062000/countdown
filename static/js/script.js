@@ -1747,6 +1747,27 @@ She is going to a wedding today. I will miss her. She asked me to text her at th
             </div>
         `
     },
+    // Specific handling for June 19th - Vacation/Trip
+    '2025-06-19': {
+        type: 'note',
+        content: `
+            <div class="text-center mb-4 fade-in">
+                <div class="card border-0 shadow-sm mx-auto" style="max-width: 600px; background: linear-gradient(135deg, #fffbe7 0%, #ffe0b2 100%); border-radius: 18px; box-shadow: 0 8px 32px 0 #ffe0b2, 0 2px 12px 0 #fffde7;">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 700; color: #6d4c41;">Heyyy You !</h4>
+                        <div class="text-center mb-3">
+                            <img src="static/images/trip.jpeg" alt="Trip" class="img-fluid rounded shadow" style="max-width: 100%; box-shadow: 0 4px 18px #bca18c;">
+                        </div>
+                        <div class="text-center" style="font-family: 'Georgia', serif; font-size: 1.1rem; color: #5d4037; background: rgba(255,255,255,0.85); border-radius: 12px; padding: 18px 22px; box-shadow: 0 2px 8px #ffe0b2;">
+                            <p style="margin-bottom: 0;">
+                                Have a fun vacation :)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+    },
 };
 
 // Get content for a specific day
@@ -3178,6 +3199,80 @@ function addDayClickHandler(element, date, currentDate) {
                 openDayModal(customEvent);
             });
         } else {
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for June 19th - Vacation/Trip
+    if (date.getMonth() === 5 && date.getDate() === 19) {
+        element.classList.add('vacation-date');
+        element.setAttribute('title', 'Have a fun vacation!');
+        
+        // Add vacation icon
+        const vacationIcon = document.createElement('span');
+        vacationIcon.innerHTML = '✈️';
+        vacationIcon.style.position = 'absolute';
+        vacationIcon.style.top = '-8px';
+        vacationIcon.style.right = '-8px';
+        vacationIcon.style.fontSize = '16px';
+        vacationIcon.style.filter = 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))';
+        vacationIcon.style.zIndex = '2';
+        vacationIcon.style.background = 'rgba(255,255,255,0.9)';
+        vacationIcon.style.borderRadius = '50%';
+        vacationIcon.style.width = '25px';
+        vacationIcon.style.height = '25px';
+        vacationIcon.style.display = 'flex';
+        vacationIcon.style.alignItems = 'center';
+        vacationIcon.style.justifyContent = 'center';
+        vacationIcon.style.boxShadow = '0 2px 5px rgba(0,0,0,0.15)';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(vacationIcon);
+        
+        // Add styling for the date element - vacation theme
+        element.style.background = 'linear-gradient(135deg, #ff9800 0%, #ffc107 100%)';
+        element.style.color = 'white';
+        element.style.fontWeight = '600';
+        element.style.boxShadow = '0 4px 10px rgba(255, 152, 0, 0.3)';
+        
+        // Add subtle animation
+        element.style.transition = 'all 0.3s ease';
+        vacationIcon.style.transition = 'all 0.3s ease';
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            vacationIcon.style.transform = 'scale(1.2) rotate(15deg)';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            vacationIcon.style.transform = 'scale(1) rotate(0)';
+        });
+        
+        // Follow the same rules as other dates
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for June 19
+                const june19Date = `${date.getFullYear()}-06-19`;
+                console.log('Special June 19 clicked with date:', june19Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return june19Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
             element.addEventListener('click', function(event) {
                 showFutureDateMessage(date);
             });
