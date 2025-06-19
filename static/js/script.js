@@ -1783,6 +1783,22 @@ She is going to a wedding today. I will miss her. She asked me to text her at th
             </div>
         `
     },
+    // Specific handling for June 18th - Video/Hug
+    '2025-06-18': {
+        type: 'video',
+        content: `
+            <div class="text-center mb-4 fade-in">
+                <h4 class="mb-3" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 700; color: #6a4c93;">Amir : I want to hug 🙂</h4>
+                <h5 class="mb-4" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 600; color: #8e44ad;">God : Sure. Here you go.. </h5>
+                <div class="video-container mx-auto mb-3" style="max-width: 600px; background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-radius: 18px; box-shadow: 0 4px 16px rgba(142,68,173,0.15); padding: 18px 12px 12px 12px;">
+                    <video width="100%" height="auto" controls style="border-radius: 12px; box-shadow: 0 2px 8px #8e44ad;">
+                        <source src="static/video/distance.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        `
+    },
 };
 
 // Get content for a specific day
@@ -3294,6 +3310,116 @@ function addDayClickHandler(element, date, currentDate) {
         }
         return;
     }
+    
+    // Specific handling for June 18th - Video/Hug
+    if (date.getMonth() === 5 && date.getDate() === 18) {
+        element.classList.add('video-date');
+        element.setAttribute('title', 'Amir wants a hug!');
+        
+        // Add fancy video/hug icon
+        const videoIcon = document.createElement('span');
+        videoIcon.innerHTML = '🎬';
+        videoIcon.style.position = 'absolute';
+        videoIcon.style.top = '-10px';
+        videoIcon.style.right = '-10px';
+        videoIcon.style.fontSize = '18px';
+        videoIcon.style.filter = 'drop-shadow(0 3px 6px rgba(0,0,0,0.3))';
+        videoIcon.style.zIndex = '2';
+        videoIcon.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        videoIcon.style.borderRadius = '50%';
+        videoIcon.style.width = '30px';
+        videoIcon.style.height = '30px';
+        videoIcon.style.display = 'flex';
+        videoIcon.style.alignItems = 'center';
+        videoIcon.style.justifyContent = 'center';
+        videoIcon.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.4), 0 2px 8px rgba(118, 75, 162, 0.3)';
+        videoIcon.style.border = '2px solid rgba(255,255,255,0.8)';
+        videoIcon.style.transition = 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        
+        // Add sparkle effect
+        const sparkle = document.createElement('span');
+        sparkle.innerHTML = '✨';
+        sparkle.style.position = 'absolute';
+        sparkle.style.top = '-5px';
+        sparkle.style.left = '-5px';
+        sparkle.style.fontSize = '12px';
+        sparkle.style.opacity = '0.8';
+        sparkle.style.animation = 'sparkle 2s infinite ease-in-out';
+        sparkle.style.zIndex = '3';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(videoIcon);
+        element.appendChild(sparkle);
+        
+        // Add styling for the date element - video theme
+        element.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        element.style.color = 'white';
+        element.style.fontWeight = '700';
+        element.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.4), 0 4px 12px rgba(118, 75, 162, 0.3)';
+        element.style.border = '2px solid rgba(255,255,255,0.2)';
+        element.style.transition = 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        
+        // Add hover animations
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.15) rotate(2deg)';
+            this.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.6), 0 6px 18px rgba(118, 75, 162, 0.5)';
+            videoIcon.style.transform = 'scale(1.3) rotate(-10deg)';
+            videoIcon.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.6), 0 4px 15px rgba(118, 75, 162, 0.5)';
+            sparkle.style.transform = 'scale(1.5) rotate(180deg)';
+            sparkle.style.opacity = '1';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0)';
+            this.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.4), 0 4px 12px rgba(118, 75, 162, 0.3)';
+            videoIcon.style.transform = 'scale(1) rotate(0)';
+            videoIcon.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.4), 0 2px 8px rgba(118, 75, 162, 0.3)';
+            sparkle.style.transform = 'scale(1) rotate(0)';
+            sparkle.style.opacity = '0.8';
+        });
+        
+        // Add sparkle animation CSS
+        if (!document.querySelector('#sparkle-animation')) {
+            const styleTag = document.createElement('style');
+            styleTag.id = 'sparkle-animation';
+            styleTag.textContent = `
+                @keyframes sparkle {
+                    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+                    50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(styleTag);
+        }
+        
+        // Follow the same rules as other dates
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for June 18
+                const june18Date = `${date.getFullYear()}-06-18`;
+                console.log('Special June 18 clicked with date:', june18Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return june18Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for June 19th - Vacation/Trip
 }
 
 // Show message for future dates in production environment
