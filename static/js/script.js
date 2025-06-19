@@ -1727,6 +1727,26 @@ She is going to a wedding today. I will miss her. She asked me to text her at th
             </div>
         `
     },
+    '2025-06-19': {
+        type: 'note',
+        content: `
+            <div class="text-center mb-4 fade-in">
+                <div class="card border-0 shadow-sm mx-auto" style="max-width: 600px; background: linear-gradient(135deg, #fffbe7 0%, #ffe0b2 100%); border-radius: 18px; box-shadow: 0 8px 32px 0 #ffe0b2, 0 2px 12px 0 #fffde7;">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 700; color: #6d4c41;">Heyyy You !</h4>
+                        <div class="text-center mb-3">
+                            <img src="static/images/trip.jpeg" alt="Trip" class="img-fluid rounded shadow" style="max-width: 100%; box-shadow: 0 4px 18px #bca18c;">
+                        </div>
+                        <div class="text-center" style="font-family: 'Georgia', serif; font-size: 1.1rem; color: #5d4037; background: rgba(255,255,255,0.85); border-radius: 12px; padding: 18px 22px; box-shadow: 0 2px 8px #ffe0b2;">
+                            <p style="margin-bottom: 0;">
+                                Have a fun vacation :)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+    },
 };
 
 // Get content for a specific day
