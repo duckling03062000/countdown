@@ -1768,6 +1768,21 @@ She is going to a wedding today. I will miss her. She asked me to text her at th
             </div>
         `
     },
+    '2025-06-18': {
+        type: 'video',
+        content: `
+            <div class="text-center mb-4 fade-in">
+                <h4 class="mb-3" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 700; color: #6a4c93;">Amir : I want to hug 🙂</h4>
+                <h5 class="mb-4" style="font-family: 'Poppins', cursive, sans-serif; font-weight: 600; color: #8e44ad;">God : Sure. Here you go.. </h5>
+                <div class="video-container mx-auto mb-3" style="max-width: 600px; background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-radius: 18px; box-shadow: 0 4px 16px rgba(142,68,173,0.15); padding: 18px 12px 12px 12px;">
+                    <video width="100%" height="auto" controls style="border-radius: 12px; box-shadow: 0 2px 8px #8e44ad;">
+                        <source src="static/video/distance.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        `
+    },
 };
 
 // Get content for a specific day
