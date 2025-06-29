@@ -1006,8 +1006,43 @@ const dailyContent = {
     },
     
     '2025-06-21': {
-        type: 'celebration',
-        content: '<div class="text-center"><h3 class="mb-4">🌞 Happy Summer Solstice! 🌞</h3><p class="lead">Today marks the official start of summer and the longest day of the year!</p><div class="my-4"><img src="https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="img-fluid rounded" alt="Summer Celebration"></div><p>Take time today to enjoy the abundance of sunlight, connect with nature, and celebrate the season of growth and vitality.</p><div class="mt-4 mb-3"><iframe width="100%" height="315" src="https://www.youtube.com/embed/u4XJ9xejgOA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p>Here\'s to a beautiful, joy-filled summer ahead!</p></div>'
+        type: 'reflection',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; overflow: hidden;">
+                <div class="card-body p-0">
+                    <!-- Header Section -->
+                    <div class="text-center py-4 px-4" style="background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="mb-3">
+                            <i class="fas fa-feather-alt" style="font-size: 2.5rem; color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.3);"></i>
+                        </div>
+                        <h3 class="mb-2" style="color: white; font-weight: 700; font-size: 1.8rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">12th May, 2025</h3>
+                    
+                    </div>
+                    
+                    <!-- Content Section -->
+                    <div class="p-4" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);">
+                        <div class="text-start" style="max-width: 700px; margin: 0 auto;">
+                            <!-- Combined Content Block -->
+                            <div class="p-4" style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                <p style="line-height: 1.8; color: #374151; font-size: 1.1rem; margin-bottom: 1.5rem;">
+                                    Writing has become my way to channel things. I have an interview tomorrow. Passing that would be a good step for me. I should study.
+                                </p>
+                                <p style="line-height: 1.8; color: #374151; font-size: 1.1rem; margin-bottom: 1.5rem;">
+                                    There is an India-Pakistan war going on. How am I least concerned about these things? All I wish is for people to not die. Army officers, civilians, no riots in the countries. I empathise with India's civilians and Pakistan's too. People near borders would be praying. Virat Kohli has retired from test cricket. I do not feel anything about it. Should I be more involved in the world? You should be, butterfly effect! These things affect us in day to day life. Even if it does not affect me, it affects people.
+                                </p>
+                                <p style="line-height: 1.8; color: #374151; font-size: 1.1rem; margin-bottom: 1.5rem;">
+                                    I have not met her yet. And honestly, at this point, I want to know how she smiles, how her face looks when she is really happy, how she frowns when she feels sad... Damn, this feeling, I should get back to my studies. A text, call, snap, reel makes me so happy, I thought I am incapable of this feeling!
+                                </p>
+                                <p style="line-height: 1.8; color: #374151; font-size: 1.1rem; margin-bottom: 0;">
+                                    Whether or not she becomes part of my life, I love that I got to know this person. That's already a beautiful gift.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
     },
     
     // Special handling for May 19 - Special Message
@@ -1798,6 +1833,46 @@ She is going to a wedding today. I will miss her. She asked me to text her at th
                 </div>
             </div>
         `
+    },
+    // Specific handling for June 21st - Reflection/Writing Theme
+    '2025-06-21': {
+        type: 'reflection',
+        content: `
+        <div class="text-center mb-4 fade-in">
+            <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; overflow: hidden;">
+                <div class="card-body p-0">
+                    <!-- Header Section -->
+                    <div class="text-center py-4 px-4" style="background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <div class="mb-3">
+                            <i class="fas fa-feather-alt" style="font-size: 2.5rem; color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.3);"></i>
+                        </div>
+                        <h3 class="mb-2" style="color: white; font-weight: 700; font-size: 1.8rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">12th May, 2025</h3>
+                    
+                    </div>
+                    
+                    <!-- Content Section -->
+                    <div class="p-4" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);">
+                        <div class="text-start" style="max-width: 700px; margin: 0 auto;">
+                            <!-- Combined Content Block -->
+                            <div class="p-4" style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                <p style="line-height: 1.8; color: #374151; font-size: 1.1rem; margin-bottom: 1.5rem;">
+                                    Writing has become my way to channel things. I have an interview tomorrow. Passing that would be a good step for me. I should study.
+                                </p>
+                                <p style="line-height: 1.8; color: #374151; font-size: 1.1rem; margin-bottom: 1.5rem;">
+                                    There is an India-Pakistan war going on. How am I least concerned about these things? All I wish is for people to not die. Army officers, civilians, no riots in the countries. I empathise with India's civilians and Pakistan's too. People near borders would be praying. Virat Kohli has retired from test cricket. I do not feel anything about it. Should I be more involved in the world? You should be, butterfly effect! These things affect us in day to day life. Even if it does not affect me, it affects people.
+                                </p>
+                                <p style="line-height: 1.8; color: #374151; font-size: 1.1rem; margin-bottom: 1.5rem;">
+                                    I have not met her yet. And honestly, at this point, I want to know how she smiles, how her face looks when she is really happy, how she frowns when she feels sad... Damn, this feeling, I should get back to my studies. A text, call, snap, reel makes me so happy, I thought I am incapable of this feeling!
+                                </p>
+                                <p style="line-height: 1.8; color: #374151; font-size: 1.1rem; margin-bottom: 0;">
+                                    Whether or not she becomes part of my life, I love that I got to know this person. That's already a beautiful gift.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
     },
 };
 
@@ -3404,6 +3479,146 @@ function addDayClickHandler(element, date, currentDate) {
                     currentTarget: {
                         getAttribute: function() {
                             return june18Date;
+                        }
+                    }
+                };
+                
+                openDayModal(customEvent);
+            });
+        } else {
+            // For future dates in production, show future message
+            element.addEventListener('click', function(event) {
+                showFutureDateMessage(date);
+            });
+        }
+        return;
+    }
+    
+    // Specific handling for June 21st - Reflection/Writing Theme
+    if (date.getMonth() === 5 && date.getDate() === 21) {
+        element.classList.add('reflection-date');
+        element.setAttribute('title', 'A moment of deep reflection');
+        
+        // Add feather icon with beautiful styling
+        const featherIcon = document.createElement('span');
+        featherIcon.innerHTML = '🪶';
+        featherIcon.style.position = 'absolute';
+        featherIcon.style.top = '-10px';
+        featherIcon.style.right = '-10px';
+        featherIcon.style.fontSize = '18px';
+        featherIcon.style.filter = 'drop-shadow(0 3px 6px rgba(0,0,0,0.3))';
+        featherIcon.style.zIndex = '3';
+        featherIcon.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%)';
+        featherIcon.style.borderRadius = '50%';
+        featherIcon.style.width = '32px';
+        featherIcon.style.height = '32px';
+        featherIcon.style.display = 'flex';
+        featherIcon.style.alignItems = 'center';
+        featherIcon.style.justifyContent = 'center';
+        featherIcon.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.3), inset 0 1px 3px rgba(255,255,255,0.8)';
+        featherIcon.style.border = '2px solid rgba(102, 126, 234, 0.2)';
+        featherIcon.style.transition = 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        
+        // Add writing sparkles effect
+        const sparkle1 = document.createElement('span');
+        sparkle1.innerHTML = '✨';
+        sparkle1.style.position = 'absolute';
+        sparkle1.style.top = '-8px';
+        sparkle1.style.left = '-8px';
+        sparkle1.style.fontSize = '14px';
+        sparkle1.style.opacity = '0.7';
+        sparkle1.style.animation = 'writingSparkle 3s infinite ease-in-out';
+        sparkle1.style.zIndex = '2';
+        sparkle1.style.animationDelay = '0s';
+        
+        const sparkle2 = document.createElement('span');
+        sparkle2.innerHTML = '✨';
+        sparkle2.style.position = 'absolute';
+        sparkle2.style.bottom = '-8px';
+        sparkle2.style.right = '-8px';
+        sparkle2.style.fontSize = '12px';
+        sparkle2.style.opacity = '0.6';
+        sparkle2.style.animation = 'writingSparkle 3s infinite ease-in-out';
+        sparkle2.style.zIndex = '2';
+        sparkle2.style.animationDelay = '1.5s';
+        
+        // Position elements properly
+        element.style.position = 'relative';
+        element.appendChild(featherIcon);
+        element.appendChild(sparkle1);
+        element.appendChild(sparkle2);
+        
+        // Add beautiful gradient styling for the date element - writing/reflection theme
+        element.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8b5cf6 100%)';
+        element.style.color = 'white';
+        element.style.fontWeight = '700';
+        element.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.4), 0 4px 15px rgba(118, 75, 162, 0.3), inset 0 1px 3px rgba(255,255,255,0.3)';
+        element.style.border = '2px solid rgba(255,255,255,0.3)';
+        element.style.textShadow = '0 2px 4px rgba(0,0,0,0.3)';
+        element.style.transition = 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        
+        // Add hover animations with writing theme
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.15) rotate(3deg)';
+            this.style.boxShadow = '0 12px 35px rgba(102, 126, 234, 0.6), 0 6px 20px rgba(118, 75, 162, 0.5), inset 0 1px 3px rgba(255,255,255,0.4)';
+            featherIcon.style.transform = 'scale(1.3) rotate(-15deg)';
+            featherIcon.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.5), inset 0 1px 3px rgba(255,255,255,0.9)';
+            sparkle1.style.transform = 'scale(1.3) rotate(180deg)';
+            sparkle2.style.transform = 'scale(1.2) rotate(-180deg)';
+            sparkle1.style.opacity = '1';
+            sparkle2.style.opacity = '0.9';
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0)';
+            this.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.4), 0 4px 15px rgba(118, 75, 162, 0.3), inset 0 1px 3px rgba(255,255,255,0.3)';
+            featherIcon.style.transform = 'scale(1) rotate(0)';
+            featherIcon.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.3), inset 0 1px 3px rgba(255,255,255,0.8)';
+            sparkle1.style.transform = 'scale(1) rotate(0)';
+            sparkle2.style.transform = 'scale(1) rotate(0)';
+            sparkle1.style.opacity = '0.7';
+            sparkle2.style.opacity = '0.6';
+        });
+        
+        // Add writing sparkle animation CSS
+        if (!document.querySelector('#writing-sparkle-animation')) {
+            const styleTag = document.createElement('style');
+            styleTag.id = 'writing-sparkle-animation';
+            styleTag.textContent = `
+                @keyframes writingSparkle {
+                    0%, 100% { 
+                        transform: scale(1) rotate(0deg); 
+                        opacity: 0.7; 
+                    }
+                    25% { 
+                        transform: scale(1.1) rotate(90deg); 
+                        opacity: 0.9; 
+                    }
+                    50% { 
+                        transform: scale(1.2) rotate(180deg); 
+                        opacity: 1; 
+                    }
+                    75% { 
+                        transform: scale(1.1) rotate(270deg); 
+                        opacity: 0.8; 
+                    }
+                }
+            `;
+            document.head.appendChild(styleTag);
+        }
+        
+        // Follow the same rules as other dates
+        if (CONFIG.STAGING === "1" || date <= currentDate) {
+            element.addEventListener('click', function(event) {
+                // Ensure we use the correct date for June 21
+                const june21Date = `${date.getFullYear()}-06-21`;
+                console.log('Special June 21 clicked with date:', june21Date);
+                
+                // Create a custom event object
+                const customEvent = {
+                    currentTarget: {
+                        getAttribute: function() {
+                            return june21Date;
                         }
                     }
                 };
